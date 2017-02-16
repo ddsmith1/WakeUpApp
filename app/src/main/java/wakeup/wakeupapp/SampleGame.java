@@ -6,24 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PracticeMenu extends AppCompatActivity {
+public class SampleGame extends AppCompatActivity {
 
-    private Button SampleGame1;
+    private Button endGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.practice_menu);
-        SampleGame1 = (Button) findViewById(R.id.samplegame1);
+        setContentView(R.layout.activity_sample_game);
+        endGame = (Button) findViewById(R.id.endGame);
 
-        SampleGame1.setOnClickListener(new View.OnClickListener() {
+        endGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PracticeMenu.this, SampleGame.class);
-                startActivity(intent);
+                finish();
             }
         });
-
-
     }
 }

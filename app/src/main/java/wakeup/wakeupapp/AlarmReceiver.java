@@ -1,9 +1,5 @@
 package wakeup.wakeupapp;
 
-/**
- * Created by Derek on 1/20/2017.
- */
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;

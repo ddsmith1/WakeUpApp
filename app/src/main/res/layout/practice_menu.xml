@@ -10,9 +10,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wakeup.wakeupapp.PracticeMenu">
 
-    <TextView
+    <Button
+        android:id="@+id/samplegame1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The practice menu will be here." />
+        android:text="Sample Game 1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
