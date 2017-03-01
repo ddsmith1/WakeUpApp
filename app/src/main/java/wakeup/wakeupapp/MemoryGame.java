@@ -49,8 +49,10 @@ public class MemoryGame extends Activity {
     private ButtonListener buttonListener;
     private TableLayout mainTable;
     private UpdateCardsHandler handler;
+    private Button endGame;
 
     int turns;
+    int cardsLeft = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,9 @@ public class MemoryGame extends Activity {
         buttonListener = new ButtonListener();
         mainTable = (TableLayout) findViewById(R.id.TableLayout03); //wtf is TableLayout03
         context = mainTable.getContext();
+
+        endGame = (Button) findViewById(R.id.endbutton);
+        endGame.setVisibility(View.INVISIBLE);
 
         startGame();
     }
@@ -98,13 +103,13 @@ public class MemoryGame extends Activity {
         images.add(getDrawable(R.drawable.card4));
         images.add(getDrawable(R.drawable.card5));
         images.add(getDrawable(R.drawable.card6));
-        images.add(getDrawable(R.drawable.card7));
-        images.add(getDrawable(R.drawable.card8));
+//        images.add(getDrawable(R.drawable.card7));
+//        images.add(getDrawable(R.drawable.card8));
     }
 
     private void loadCards() {
         try {
-            int size = SQUARE_SIZE * SQUARE_SIZE;
+            int size = 12;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
             for (int i = 0; i < size; i++) {
@@ -121,7 +126,8 @@ public class MemoryGame extends Activity {
                 }
 
                 temp = list.remove(temp).intValue(); //removes and gets value of removed item in list
-                cards[i % SQUARE_SIZE][i / SQUARE_SIZE] = temp % (size / 2);
+                cards[i % 3][i / 3] = temp % (size / 2);
+                cardsLeft++;
             }
         } catch (Exception e) {
             Log.e("loadCards()", e + "");
@@ -216,6 +222,7 @@ public class MemoryGame extends Activity {
             if (cards[firstCard.x][firstCard.y] == cards[secondCard.x][secondCard.y]) { //if match
                 firstCard.button.setVisibility(View.INVISIBLE);
                 secondCard.button.setVisibility(View.INVISIBLE);
+                cardsLeft = cardsLeft - 2;
             } else {
                 firstCard.button.setBackground(backImage);
                 secondCard.button.setBackground(backImage);
@@ -223,6 +230,18 @@ public class MemoryGame extends Activity {
 
             firstCard = null;
             secondCard = null;
+
+            if (cardsLeft == 0) {
+                endGame.setVisibility(View.VISIBLE);
+
+
+                endGame.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+            }
         }
     }
 
