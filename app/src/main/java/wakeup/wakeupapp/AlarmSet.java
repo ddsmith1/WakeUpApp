@@ -36,10 +36,12 @@ public class AlarmSet extends AppCompatActivity {
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
             calendar.set(Calendar.MINUTE, alarmTimePicker.getMinute());
+
             Intent intent = new Intent(this, AlarmReceiver.class);
             pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
             time=(calendar.getTimeInMillis()-(calendar.getTimeInMillis()%60000));
+            
             if(System.currentTimeMillis()>time) {
                 if (calendar.AM_PM == 0) {
                     time = time + (1000 * 60 * 60 * 12);

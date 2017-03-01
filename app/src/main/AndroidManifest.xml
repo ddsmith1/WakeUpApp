@@ -18,10 +18,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".PracticeMenu" />
-        <activity android:name=".StartActivity" />
         <activity android:name=".Help" />
         <activity android:name=".AlarmSet" />
         <receiver android:name=".AlarmReceiver" />
+        <activity android:name=".SampleGame" />
     </application>
 
 </manifest>
