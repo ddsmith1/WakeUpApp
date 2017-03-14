@@ -10,12 +10,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wakeup.wakeupapp.PracticeMenu">
 
-    <Button
-        android:id="@+id/samplegame1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sample Game 1"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <TableLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/samplegame1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample Game 1"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </TableRow>
+        <TableRow android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/memoryGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Memory Game"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
