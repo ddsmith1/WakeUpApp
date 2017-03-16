@@ -23,6 +23,7 @@
         <receiver android:name=".AlarmReceiver" />
         <activity android:name=".SampleGame" />
         <activity android:name=".MemoryGame" />
+        <activity android:name=".SortingGame" />
     </application>
 
 </manifest>

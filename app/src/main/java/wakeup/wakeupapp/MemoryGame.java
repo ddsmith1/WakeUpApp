@@ -122,7 +122,7 @@ public class MemoryGame extends Activity {
                 int temp = 0;
 
                 if (i > 0) {
-                    temp = rand.nextInt(i); //gets random integer from [0,j)
+                    temp = rand.nextInt(i+1); //gets random integer from [0,i)
                 }
 
                 temp = list.remove(temp).intValue(); //removes and gets value of removed item in list
