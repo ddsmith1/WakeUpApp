@@ -29,8 +29,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SortingGame extends Activity {
-    final private static Object LOCK = new Object();
-
     private Stack<SortingItem> items;
     private List<SortingItem> images;
     private Context context;
