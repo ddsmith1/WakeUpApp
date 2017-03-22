@@ -10,13 +10,15 @@ public class PracticeMenu extends AppCompatActivity {
 
     private Button SampleGame1;
     private Button MemoryGame;
+    private Button MathGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practice_menu);
-        SampleGame1 = (Button) findViewById(R.id.samplegame1);
+        SampleGame1 = (Button) findViewById(R.id.sampleGame1);
         MemoryGame = (Button) findViewById(R.id.memoryGame);
+        MathGame = (Button) findViewById(R.id.mathGame);
 
         SampleGame1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +27,7 @@ public class PracticeMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         MemoryGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +36,13 @@ public class PracticeMenu extends AppCompatActivity {
             }
         });
 
+        MathGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PracticeMenu.this, MathGame.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

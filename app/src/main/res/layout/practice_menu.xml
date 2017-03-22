@@ -13,10 +13,12 @@
     <TableLayout
         android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
         <TableRow android:gravity="center_horizontal">
             <Button
-                android:id="@+id/samplegame1"
+                android:id="@+id/sampleGame1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sample Game 1"
@@ -29,6 +31,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Memory Game"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </TableRow>
+        <TableRow android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/mathGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Math Game"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </TableRow>

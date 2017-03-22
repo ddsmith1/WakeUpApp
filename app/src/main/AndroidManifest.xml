@@ -20,9 +20,12 @@
         <activity android:name=".PracticeMenu" />
         <activity android:name=".Help" />
         <activity android:name=".AlarmSet" />
+
         <receiver android:name=".AlarmReceiver" />
+
         <activity android:name=".SampleGame" />
         <activity android:name=".MemoryGame" />
+        <activity android:name=".MathGame" />
     </application>
 
 </manifest>
