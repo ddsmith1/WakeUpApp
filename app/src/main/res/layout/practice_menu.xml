@@ -34,6 +34,15 @@
         </TableRow>
         <TableRow android:gravity="center_horizontal">
             <Button
+                android:id="@+id/patternGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pattern Game"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </TableRow>
+        <TableRow android:gravity="center_horizontal">
+            <Button
                 android:id="@+id/sortingGame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
