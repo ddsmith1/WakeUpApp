@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class PracticeMenu extends AppCompatActivity {
 
-    private Button SampleGame1;
+    private Button SampleGame;
     private Button MemoryGame;
     private Button PatternGame;
     private Button SortingGame;
@@ -18,13 +18,13 @@ public class PracticeMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practice_menu);
-        SampleGame1 = (Button) findViewById(R.id.sampleGame1);
+        SampleGame = (Button) findViewById(R.id.sampleGame);
         MemoryGame = (Button) findViewById(R.id.memoryGame);
         PatternGame = (Button) findViewById(R.id.patternGame);
         SortingGame = (Button) findViewById(R.id.sortingGame);
         MathGame = (Button) findViewById(R.id.mathGame);
 
-        SampleGame1.setOnClickListener(new View.OnClickListener() {
+        SampleGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, SampleGame.class);

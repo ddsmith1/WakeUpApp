@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
         <TableRow android:gravity="center_horizontal">
             <Button
-                android:id="@+id/samplegame1"
+                android:id="@+id/sampleGame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sample Game 1"
