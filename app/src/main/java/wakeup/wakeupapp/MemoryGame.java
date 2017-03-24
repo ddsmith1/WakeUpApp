@@ -65,7 +65,7 @@ public class MemoryGame extends Activity {
         backImage = getDrawable(R.drawable.back);
 
         buttonListener = new ButtonListener();
-        mainTable = (TableLayout) findViewById(R.id.TableLayout03); //wtf is TableLayout03
+        mainTable = (TableLayout) findViewById(R.id.TableLayout03);
         context = mainTable.getContext();
 
         endGame = (Button) findViewById(R.id.endbutton);
