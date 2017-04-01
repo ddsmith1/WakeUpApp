@@ -22,6 +22,7 @@
         <activity android:name=".AlarmSet" />
         <receiver android:name=".AlarmReceiver" />
         <activity android:name=".SampleGame" />
+        <activity android:name=".MatchingGame" />
         <activity android:name=".MemoryGame" />
         <activity android:name=".MathGame" />
         <activity android:name=".PatternGame" />
