@@ -46,7 +46,6 @@ public class MemoryGame extends Activity {
     private Context context;
     private Drawable backImage;
 
-//    private ButtonListener buttonListener;
     private TableLayout mainTable;
     private ShowCardsHandler showCardsHandler;
     private ShowModifiedHandler showModifiedHandler;
@@ -108,7 +107,6 @@ public class MemoryGame extends Activity {
 
         backImage = getDrawable(R.drawable.back);
 
-//        buttonListener = new ButtonListener();
         mainTable = (TableLayout) findViewById(R.id.TableLayout03);
         context = mainTable.getContext();
 
