@@ -46,7 +46,7 @@ public class ColorGame extends Activity {
         int picker1 = rand.nextInt(4);
         int picker2 = rand.nextInt(4);;
 
-        while (picker2 == picker1) {
+        while (picker2 == picker1 || colors[picker2] == currentColor) {
             picker2 = rand.nextInt(4);
         }
 
