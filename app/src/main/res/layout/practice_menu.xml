@@ -34,10 +34,10 @@
         </TableRow>
         <TableRow android:gravity="center_horizontal">
             <Button
-                android:id="@+id/memoryGame"
+                android:id="@+id/matchingGame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Memory Game"
+                android:text="Matching Game"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </TableRow>
@@ -47,6 +47,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Math Game"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </TableRow>
+        <TableRow android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/memoryGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Memory Game"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </TableRow>

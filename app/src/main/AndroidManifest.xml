@@ -23,8 +23,9 @@
         <receiver android:name=".AlarmReceiver" />
         <activity android:name=".SampleGame" />
         <activity android:name=".ColorGame" />
-        <activity android:name=".MemoryGame" />
+        <activity android:name=".MatchingGame" />
         <activity android:name=".MathGame" />
+        <activity android:name=".MemoryGame" />
         <activity android:name=".PatternGame" />
         <activity android:name=".SortingGame" />
     </application>
