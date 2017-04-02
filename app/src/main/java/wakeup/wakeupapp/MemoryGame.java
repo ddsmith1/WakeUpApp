@@ -50,6 +50,7 @@ public class MemoryGame extends Activity {
     private TableLayout mainTable;
     private ShowCardsHandler showCardsHandler;
     private ShowModifiedHandler showModifiedHandler;
+    private Handler handler = new Handler();
 
     private Button answer1;
     private Button answer2;
@@ -71,12 +72,13 @@ public class MemoryGame extends Activity {
             Toast toast = Toast.makeText(context, "Correct", Toast.LENGTH_LONG);
             toast.show();
 
+            answer1.setVisibility(View.INVISIBLE);
+            answer2.setVisibility(View.INVISIBLE);
+            answer3.setVisibility(View.INVISIBLE);
+            answer4.setVisibility(View.INVISIBLE);
+
             if (roundsLeft == 0) {
                 endGame.setVisibility(View.VISIBLE);
-                answer1.setVisibility(View.INVISIBLE);
-                answer2.setVisibility(View.INVISIBLE);
-                answer3.setVisibility(View.INVISIBLE);
-                answer4.setVisibility(View.INVISIBLE);
                 mainTable.setVisibility(View.GONE);
                 findViewById(R.id.tv2).setVisibility(View.GONE);
                 findViewById(R.id.tv1).setVisibility(View.GONE);
@@ -87,7 +89,12 @@ public class MemoryGame extends Activity {
                     }
                 });
             } else {
-                startGame();
+                ((TextView)findViewById(R.id.tv2)).setText("Another round coming!");
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        startGame();
+                    }
+                }, 3000);
             }
         } else {
             button.setEnabled(false);
@@ -132,16 +139,18 @@ public class MemoryGame extends Activity {
         answer3.setOnClickListener(listener);
         answer4.setOnClickListener(listener);
 
+        answer1.setVisibility(View.INVISIBLE);
+        answer2.setVisibility(View.INVISIBLE);
+        answer3.setVisibility(View.INVISIBLE);
+        answer4.setVisibility(View.INVISIBLE);
+
         startGame();
     }
 
     public void startGame() {
         cardQueue = new LinkedList<Card>();
+
         mainTable.setVisibility(View.VISIBLE);
-        answer1.setVisibility(View.INVISIBLE);
-        answer2.setVisibility(View.INVISIBLE);
-        answer3.setVisibility(View.INVISIBLE);
-        answer4.setVisibility(View.INVISIBLE);
 
         cards = new int[SQUARE_SIZE][SQUARE_SIZE];
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
