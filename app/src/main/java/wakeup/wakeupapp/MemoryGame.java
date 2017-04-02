@@ -32,6 +32,7 @@ import java.util.TimerTask;
 
 public class MemoryGame extends Activity {
     final private int SQUARE_SIZE = 3;
+    final private int TOTAL_NR_SHAPES = 12;
     final private static Object LOCK = new Object();
 
     private int row = -1;
@@ -41,7 +42,7 @@ public class MemoryGame extends Activity {
     private Drawable removedCardImage;
     private int removalIndex;
     private List<Drawable> images;
-    private LinkedList<Card> cardQueue = new LinkedList<Card>();
+    private LinkedList<Card> cardQueue;
     private LinkedList<Drawable> fakeAnswerPool = new LinkedList<Drawable>();
     private Context context;
     private Drawable backImage;
@@ -135,6 +136,7 @@ public class MemoryGame extends Activity {
     }
 
     public void startGame() {
+        cardQueue = new LinkedList<Card>();
         mainTable.setVisibility(View.VISIBLE);
         answer1.setVisibility(View.INVISIBLE);
         answer2.setVisibility(View.INVISIBLE);
@@ -226,10 +228,11 @@ public class MemoryGame extends Activity {
             int size = SQUARE_SIZE * SQUARE_SIZE;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
-            for (int i = 0; i < size+3; i++) {
+            for (int i = 0; i < TOTAL_NR_SHAPES; i++) {
                 list.add(new Integer(i));
             }
 
+            Collections.shuffle(list);
             Random rand = new Random();
 
             for (int i = size - 1; i >= 0; i--) {
@@ -240,7 +243,7 @@ public class MemoryGame extends Activity {
                 }
 
                 temp = list.remove(temp).intValue();
-                cards[i % 3][i / 3] = temp % size;
+                cards[i % 3][i / 3] = temp % TOTAL_NR_SHAPES;
             }
 
             for (int i = 0; i<list.size(); i++) {
@@ -266,7 +269,6 @@ public class MemoryGame extends Activity {
 
     private View createImageButton(int x, int y) {
         Button button = new Button(context);
-        button.setBackground(backImage);
         button.setId(100 * x + y);
         Card card = new Card(button, x, y);
         cardQueue.add(card);
