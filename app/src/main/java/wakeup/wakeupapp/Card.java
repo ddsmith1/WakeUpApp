@@ -12,10 +12,18 @@ public class Card
     public int x;
     public int y;
     public Button button;
+    public String color;
 
     public Card(Button button, int x, int y) {
         this.x = x;
         this.y = y;
         this.button = button;
+    }
+
+    public Card(Button button, int x, int y, String color) {
+        this.x = x;
+        this.y = y;
+        this.button = button;
+        this.color = color;
     }
 }
