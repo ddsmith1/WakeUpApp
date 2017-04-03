@@ -78,7 +78,7 @@ public class PatternGame extends Activity {
 
         for (int i=0; i<3; i++) { //just for a nice answer pool
             int num1 = currentSolution + rand.nextInt(10) + 1;
-            int num2 = currentSolution - rand.nextInt(8) + 1;
+            int num2 = currentSolution - rand.nextInt(8) - 1;
 
             if (fakeAnswers.contains(num1) == false) {
                 fakeAnswers.add(num1);
@@ -110,8 +110,8 @@ public class PatternGame extends Activity {
 
     private void checkSolution(Button button) {
         String text= button.getText().toString();
-        //Should be something real instead
-        if (currentSolution == Integer.parseInt(text)) { //maybe also shape?
+
+        if (currentSolution == Integer.parseInt(text)) {
             patternsLeft--;
             answer1.setEnabled(true);
             answer2.setEnabled(true);
