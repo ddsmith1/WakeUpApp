@@ -171,20 +171,21 @@ public class MemoryGame extends Activity {
     private void loadImages() {
         images = new ArrayList<Drawable>();
 
-        images.add(getDrawable(R.drawable.card1));
-        images.add(getDrawable(R.drawable.card2));
-        images.add(getDrawable(R.drawable.card3));
-        images.add(getDrawable(R.drawable.card4));
-        images.add(getDrawable(R.drawable.card5));
-        images.add(getDrawable(R.drawable.card6));
-        images.add(getDrawable(R.drawable.card7));
-        images.add(getDrawable(R.drawable.card8));
-        //TODO: should be distinct images, and should have at least 12 so 3 can be the decoy answers
-        images.add(getDrawable(R.drawable.card8));
+        images.add(getDrawable(R.mipmap.green_circle));
+        images.add(getDrawable(R.mipmap.green_rect));
+        images.add(getDrawable(R.mipmap.green_tri));
 
-        images.add(getDrawable(R.drawable.card1));
-        images.add(getDrawable(R.drawable.card2));
-        images.add(getDrawable(R.drawable.card3));
+        images.add(getDrawable(R.mipmap.yellow_circle));
+        images.add(getDrawable(R.mipmap.yellow_rect));
+        images.add(getDrawable(R.mipmap.yellow_tri));
+
+        images.add(getDrawable(R.mipmap.red_circle));
+        images.add(getDrawable(R.mipmap.red_rect));
+        images.add(getDrawable(R.mipmap.red_tri));
+
+        images.add(getDrawable(R.mipmap.blue_circle));
+        images.add(getDrawable(R.mipmap.blue_rect));
+        images.add(getDrawable(R.mipmap.blue_tri));
     }
 
     private void showCards() {

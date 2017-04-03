@@ -25,7 +25,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MatchingGame extends Activity {
-    final private int SQUARE_SIZE = 4;
+    final private int NR_ROWS = 4;
+    final private int NR_COLS = 3;
     final private static Object LOCK = new Object();
 
     private int row = -1;
@@ -67,13 +68,13 @@ public class MatchingGame extends Activity {
     }
 
     public void startGame() {
-        cards = new int[SQUARE_SIZE][SQUARE_SIZE];
+        cards = new int[NR_ROWS][NR_COLS];
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
         tr.removeAllViews();
         mainTable = new TableLayout(context);
         tr.addView(mainTable);
 
-        for (int y = 0; y < SQUARE_SIZE; y++) {
+        for (int y = 0; y < NR_ROWS; y++) {
             mainTable.addView(createCardRow(y));
         }
 
@@ -101,11 +102,11 @@ public class MatchingGame extends Activity {
 
     private void loadCards() {
         try {
-            int size = 12;
+            int size = NR_COLS*NR_ROWS;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
             for (int i = 0; i < size; i++) {
-                list.add(new Integer(i)); //creates list of 0-15
+                list.add(new Integer(i));
             }
 
             Random rand = new Random();
@@ -131,7 +132,7 @@ public class MatchingGame extends Activity {
         TableRow row = new TableRow(context);
         row.setHorizontalGravity(Gravity.CENTER);
 
-        for (int x = 0; x < 3; x++) {
+        for (int x = 0; x < NR_COLS; x++) {
             row.addView(createImageButton(x, y));
         }
         return row;
