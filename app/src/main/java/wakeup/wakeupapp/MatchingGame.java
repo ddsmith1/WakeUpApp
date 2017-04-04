@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -171,11 +172,11 @@ public class MatchingGame extends Activity {
                 int x = id / 100;
                 int y = id % 100;
 
-                turnCard((Button) view, x, y);
+                turnCard((ImageButton) view, x, y);
             }
         }
 
-        private void turnCard(Button button, int x, int y) {
+        private void turnCard(ImageButton button, int x, int y) {
             button.setBackground(images.get(cards[x][y]));
 
             if (firstCard == null) { //haven't clicked a card yet

@@ -17,6 +17,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -53,15 +55,15 @@ public class MemoryGame extends Activity {
     private ShowModifiedHandler showModifiedHandler;
     private Handler handler = new Handler();
 
-    private Button answer1;
-    private Button answer2;
-    private Button answer3;
-    private Button answer4;
+    private ImageButton answer1;
+    private ImageButton answer2;
+    private ImageButton answer3;
+    private ImageButton answer4;
     private Button endGame;
 
     int roundsLeft = 3;
 
-    private void checkSelection(Button button){
+    private void checkSelection(ImageButton button){
         if (removedCardImage == button.getBackground()) { //maybe also shape?
             cardQueue.get(removalIndex).button.setBackground(removedCardImage);
             mainTable.setVisibility(View.INVISIBLE);
@@ -122,15 +124,15 @@ public class MemoryGame extends Activity {
         endGame = (Button) findViewById(R.id.endbutton);
         endGame.setVisibility(View.INVISIBLE);
 
-        answer1 = (Button) findViewById(R.id.answer1);
-        answer2 = (Button) findViewById(R.id.answer2);
-        answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.answer4);
+        answer1 = (ImageButton) findViewById(R.id.answer1);
+        answer2 = (ImageButton) findViewById(R.id.answer2);
+        answer3 = (ImageButton) findViewById(R.id.answer3);
+        answer4 = (ImageButton) findViewById(R.id.answer4);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Button btn = (Button) view;
+                ImageButton btn = (ImageButton) view;
                 checkSelection(btn);
             }
         };
@@ -192,7 +194,7 @@ public class MemoryGame extends Activity {
     private void showCards() {
         for (int i=0; i<cardQueue.size(); i++) {
             Card card = cardQueue.remove();
-            Button button = card.button;
+            ImageButton button = card.button;
             int id = button.getId();
             int x = id / 100;
             int y = id % 100;
@@ -279,7 +281,7 @@ public class MemoryGame extends Activity {
     }
 
     private View createImageButton(int x, int y) {
-        Button button = new Button(context);
+        ImageButton button = new ImageButton(context);
         button.setId(100 * x + y);
         Card card = new Card(button, x, y);
         cardQueue.add(card);
@@ -319,7 +321,7 @@ public class MemoryGame extends Activity {
 
             for (int i=0; i<cardQueue.size(); i++) {
                 Card card = cardQueue.get(i);
-                Button button = card.button;
+                ImageButton button = card.button;
                 int id = button.getId();
                 int x = id / 100;
                 int y = id % 100;
@@ -351,7 +353,7 @@ public class MemoryGame extends Activity {
 
             Collections.shuffle(answers);
 
-            Button[] buttons = {answer1, answer2, answer3, answer4};
+            ImageButton[] buttons = {answer1, answer2, answer3, answer4};
 
             for (int i=0; i<4; i++) {
 
