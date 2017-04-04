@@ -19,6 +19,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
@@ -81,6 +82,7 @@ public class MatchingGame extends Activity {
         firstCard = null;
         secondCard = null;
 
+        Collections.shuffle(images); //Todo: does this actually do anything?
         loadCards();
 
         turns = 0;
@@ -90,14 +92,21 @@ public class MatchingGame extends Activity {
     private void loadImages() {
         images = new ArrayList<Drawable>();
 
-        images.add(getDrawable(R.drawable.card1));
-        images.add(getDrawable(R.drawable.card2));
-        images.add(getDrawable(R.drawable.card3));
-        images.add(getDrawable(R.drawable.card4));
-        images.add(getDrawable(R.drawable.card5));
-        images.add(getDrawable(R.drawable.card6));
-//        images.add(getDrawable(R.drawable.card7));
-//        images.add(getDrawable(R.drawable.card8));
+        images.add(getDrawable(R.mipmap.green_circle));
+        images.add(getDrawable(R.mipmap.green_rect));
+        images.add(getDrawable(R.mipmap.green_tri));
+
+        images.add(getDrawable(R.mipmap.yellow_circle));
+        images.add(getDrawable(R.mipmap.yellow_rect));
+        images.add(getDrawable(R.mipmap.yellow_tri));
+
+        images.add(getDrawable(R.mipmap.red_circle));
+        images.add(getDrawable(R.mipmap.red_rect));
+        images.add(getDrawable(R.mipmap.red_tri));
+
+        images.add(getDrawable(R.mipmap.blue_circle));
+        images.add(getDrawable(R.mipmap.blue_rect));
+        images.add(getDrawable(R.mipmap.blue_tri));
     }
 
     private void loadCards() {

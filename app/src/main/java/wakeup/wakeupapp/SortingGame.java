@@ -118,7 +118,7 @@ public class SortingGame extends Activity {
         imageSpot = new ImageView(context);
         tr.addView(imageSpot);
 
-        loadCards();
+        loadItems();
         imageSpot.setImageDrawable(items.peek().drawable);
         ((TextView) findViewById(R.id.tv1)).setText("Items left: " + itemsLeft);
     }
@@ -126,43 +126,61 @@ public class SortingGame extends Activity {
     private void loadImages() {
         images = new ArrayList<SortingItem>();
         Drawable image;
-        Color color = new Color();
 
 
-        image = getDrawable(R.drawable.card1);
-        SortingItem item1 = new SortingItem(image, "red", "triangle");
+        image = getDrawable(R.mipmap.green_circle);
+        SortingItem item1 = new SortingItem(image, "green", "circle");
         images.add(item1);
 
-        image = getDrawable(R.drawable.card2);
-        SortingItem item2 = new SortingItem(image, "red", "square");
+        image = getDrawable(R.mipmap.green_rect);
+        SortingItem item2 = new SortingItem(image, "green", "rectangle");
         images.add(item2);
 
-        image = getDrawable(R.drawable.card3);
-        SortingItem item3 = new SortingItem(image, "red", "pentagon");
+        image = getDrawable(R.mipmap.green_tri);
+        SortingItem item3 = new SortingItem(image, "green", "triangle");
         images.add(item3);
 
-        image = getDrawable(R.drawable.card4);
-        SortingItem item4 = new SortingItem(image, "red", "hexagon");
+
+        image = getDrawable(R.mipmap.yellow_circle);
+        SortingItem item4 = new SortingItem(image, "yellow", "circle");
         images.add(item4);
 
-        image = getDrawable(R.drawable.card5);
-        SortingItem item5 = new SortingItem(image, "blue", "triangle");
+        image = getDrawable(R.mipmap.yellow_rect);
+        SortingItem item5 = new SortingItem(image, "yellow", "rectangle");
         images.add(item5);
 
-        image = getDrawable(R.drawable.card6);
-        SortingItem item6 = new SortingItem(image, "blue", "square");
+        image = getDrawable(R.mipmap.yellow_tri);
+        SortingItem item6 = new SortingItem(image, "yellow", "triangle");
         images.add(item6);
 
-        image = getDrawable(R.drawable.card7);
-        SortingItem item7 = new SortingItem(image, "blue", "pentagon");
+
+        image = getDrawable(R.mipmap.blue_circle);
+        SortingItem item7 = new SortingItem(image, "blue", "circle");
         images.add(item7);
 
-        image = getDrawable(R.drawable.card8);
-        SortingItem item8 = new SortingItem(image, "blue", "hexagon");
+        image = getDrawable(R.mipmap.blue_rect);
+        SortingItem item8 = new SortingItem(image, "blue", "rectangle");
         images.add(item8);
+
+        image = getDrawable(R.mipmap.blue_tri);
+        SortingItem item9 = new SortingItem(image, "blue", "triangle");
+        images.add(item9);
+
+
+        image = getDrawable(R.mipmap.red_circle);
+        SortingItem item10 = new SortingItem(image, "red", "circle");
+        images.add(item10);
+
+        image = getDrawable(R.mipmap.red_rect);
+        SortingItem item11 = new SortingItem(image, "red", "rectangle");
+        images.add(item11);
+
+        image = getDrawable(R.mipmap.red_tri);
+        SortingItem item12 = new SortingItem(image, "red", "triangle");
+        images.add(item12);
     }
 
-    private void loadCards() {
+    private void loadItems() {
         try {
             int size = 8;
             ArrayList<Integer> list = new ArrayList<Integer>();
@@ -186,7 +204,7 @@ public class SortingGame extends Activity {
                 itemsLeft++;
             }
         } catch (Exception e) {
-            Log.e("loadCards()", e + "");
+            Log.e("loadItems()", e + "");
         }
 
     }
