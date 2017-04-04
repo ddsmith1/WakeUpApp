@@ -29,6 +29,7 @@ import java.util.TimerTask;
 public class MatchingGame extends Activity {
     final private int NR_ROWS = 4;
     final private int NR_COLS = 3;
+    final private int TOTAL_NR_SHAPES = NR_ROWS*NR_COLS;
     final private static Object LOCK = new Object();
 
     private int row = -1;
@@ -70,7 +71,7 @@ public class MatchingGame extends Activity {
     }
 
     public void startGame() {
-        cards = new int[NR_ROWS][NR_COLS];
+        cards = new int[NR_COLS][NR_ROWS];
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
         tr.removeAllViews();
         mainTable = new TableLayout(context);
@@ -83,7 +84,6 @@ public class MatchingGame extends Activity {
         firstCard = null;
         secondCard = null;
 
-        Collections.shuffle(images); //Todo: does this actually do anything?
         loadCards();
 
         turns = 0;
@@ -115,7 +115,7 @@ public class MatchingGame extends Activity {
             int size = NR_COLS*NR_ROWS;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < TOTAL_NR_SHAPES; i++) {
                 list.add(new Integer(i));
             }
 
@@ -129,7 +129,7 @@ public class MatchingGame extends Activity {
                 }
 
                 temp = list.remove(temp).intValue(); //removes and gets value of removed item in list
-                cards[i % 3][i / 3] = temp % (size / 2);
+                cards[i % NR_COLS][i / NR_COLS] = temp % (TOTAL_NR_SHAPES / 2);
                 cardsLeft++;
             }
         } catch (Exception e) {
@@ -149,7 +149,7 @@ public class MatchingGame extends Activity {
     }
 
     private View createImageButton(int x, int y) {
-        Button button = new Button(context);
+        ImageButton button = new ImageButton(context);
         button.setBackground(backImage);
         button.setId(100 * x + y);
         button.setOnClickListener(buttonListener);
