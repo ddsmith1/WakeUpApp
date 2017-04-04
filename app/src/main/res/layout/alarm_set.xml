@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
@@ -8,14 +9,21 @@
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:timePickerMode="spinner"
+        android:layout_marginTop="70dp"
+        android:backgroundTintMode="screen" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:onClick="OnToggleClicked"
+        style="?android:attr/buttonStyleToggle"
+        android:textColor="@color/textLight"
         android:checked="false"
-        android:onClick="OnToggleClicked" />
+        android:textOff="Alarm Off"
+        android:textOn="Alarm On"
+        android:layout_marginTop="25dp" />
 </LinearLayout>

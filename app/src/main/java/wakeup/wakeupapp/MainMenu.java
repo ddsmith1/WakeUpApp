@@ -5,15 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.Random;
 
 public class MainMenu extends AppCompatActivity {
 
-    private Button alarmSet;
-    private Button practiceMenu;
-    private Button startActivity;
-    private Button help;
+    private ImageButton alarmSet;
+    private ImageButton practiceMenu;
+    private ImageButton startActivity;
+    private ImageButton help;
     final int NUM_CHOICES = 1;
     final int NUM_GAMES = 1;
 
@@ -22,10 +23,10 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
 
-        alarmSet = (Button) findViewById(R.id.alarmSet);
-        practiceMenu = (Button) findViewById(R.id.practiceMenu);
-        startActivity = (Button) findViewById(R.id.startActivity);
-        help = (Button) findViewById(R.id.help);
+        alarmSet = (ImageButton) findViewById(R.id.alarmSet);
+        practiceMenu = (ImageButton) findViewById(R.id.practiceMenu);
+        startActivity = (ImageButton) findViewById(R.id.startActivity);
+        help = (ImageButton) findViewById(R.id.help);
 
        alarmSet.setOnClickListener(new View.OnClickListener() {
             @Override

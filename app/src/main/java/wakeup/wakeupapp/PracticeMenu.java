@@ -5,30 +5,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class PracticeMenu extends AppCompatActivity {
 
-    private Button SampleGame;
-    private Button MatchingGame;
-    private Button ColorGame;
-    private Button DistractionGame;
-    private Button MemoryGame;
-    private Button PatternGame;
-    private Button SortingGame;
-    private Button MathGame;
+    private ImageButton SampleGame;
+    private ImageButton MatchingGame;
+    private ImageButton ColorGame;
+    private ImageButton DistractionGame;
+    private ImageButton MemoryGame;
+    private ImageButton PatternGame;
+    private ImageButton SortingGame;
+    private ImageButton MathGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practice_menu);
-        SampleGame = (Button) findViewById(R.id.sampleGame);
-        MatchingGame = (Button) findViewById(R.id.matchingGame);
-        ColorGame = (Button) findViewById(R.id.colorGame);
-        DistractionGame = (Button) findViewById(R.id.distractionGame);
-        MemoryGame = (Button) findViewById(R.id.memoryGame);
-        PatternGame = (Button) findViewById(R.id.patternGame);
-        SortingGame = (Button) findViewById(R.id.sortingGame);
-        MathGame = (Button) findViewById(R.id.mathGame);
+        SampleGame = (ImageButton) findViewById(R.id.sampleGame);
+        MatchingGame = (ImageButton) findViewById(R.id.matchingGame);
+        ColorGame = (ImageButton) findViewById(R.id.colorGame);
+        DistractionGame = (ImageButton) findViewById(R.id.distractionGame);
+        MemoryGame = (ImageButton) findViewById(R.id.memoryGame);
+        PatternGame = (ImageButton) findViewById(R.id.patternGame);
+        SortingGame = (ImageButton) findViewById(R.id.sortingGame);
+        MathGame = (ImageButton) findViewById(R.id.mathGame);
 
         SampleGame.setOnClickListener(new View.OnClickListener() {
             @Override

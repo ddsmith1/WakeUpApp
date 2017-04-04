@@ -9,42 +9,102 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wakeup.wakeupapp.MainMenu">
 
-    <Button
-        android:id="@+id/startActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Activity"
+    <TableLayout
+        android:layout_width="match_parent"
+        android:stretchColumns="*"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/practiceMenu"
-        android:layout_alignEnd="@+id/practiceMenu"
-        android:layout_marginTop="69dp" />
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/alarmSet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Set Alarm"
-        android:layout_below="@+id/startActivity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp" />
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/startActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/activities_icon"
+                    android:minHeight="80dp"
+                    android:minWidth="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/colorAccent" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Activity"
+                    android:textSize="18sp"
+                    android:textColor="@color/textDark"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/practiceMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Practice Menu"
-        android:layout_below="@+id/alarmSet"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
+                <ImageButton
+                    android:id="@+id/alarmSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/alarm_icon"
+                    android:minHeight="80dp"
+                    android:minWidth="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@android:color/holo_red_dark" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/help"
-        android:text="Help"
-        android:layout_below="@+id/practiceMenu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
-
-
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Set Alarm"
+                    android:textSize="18sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="35dp"
+            android:layout_marginTop="35dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/practiceMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/practice_icon"
+                    android:textColor="@color/textDark"
+                    android:minHeight="80dp"
+                    android:minWidth="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/yellow" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Practice"
+                    android:textSize="18sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/help_icon"
+                    android:minHeight="80dp"
+                    android:minWidth="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/colorPrimaryDark" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Help"
+                    android:textSize="18sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>
