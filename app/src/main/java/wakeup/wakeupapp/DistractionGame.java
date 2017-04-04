@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -325,7 +326,7 @@ public class DistractionGame extends Activity {
     private void showCards() {
         for (int i=0; i<cardList.size(); i++) {
             Card card = cardList.remove();
-            Button button = card.button;
+            ImageButton button = card.button;
             int id = button.getId();
 
             int imageIndex = cards[id / 100][id % 100];
@@ -368,7 +369,7 @@ public class DistractionGame extends Activity {
     }
 
     private View createImageButton(int x, int y) {
-        Button button = new Button(context);
+        ImageButton button = new ImageButton(context);
         button.setId(100 * x + y);
 
         Card card = new Card(button, x, y);

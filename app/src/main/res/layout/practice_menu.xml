@@ -11,80 +11,251 @@
     tools:context="wakeup.wakeupapp.PracticeMenu">
 
     <TableLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/sampleGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sample Game 1"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+        android:stretchColumns="*"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp">
+
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/sampleGame0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distract_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:layout_gravity="center_horizontal" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Sample"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/sampleGame3"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distract_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Sample"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/sampleGame4"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distract_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Sample"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
         </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/colorGame"
-                android:layout_width="wrap_content"
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/distractionGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distract_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:layout_gravity="center_horizontal" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Distract"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/sampleGame"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distract_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp" />
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Sample"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/sampleGame2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distract_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp" />
+
+                <TextView
+                android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
-                android:text="Color Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_width="wrap_content"
+                android:text="Sample"
+                android:textSize="14sp"
+                android:textColor="@color/textDark" />
+            </LinearLayout>
         </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/distractionGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Distraction Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/colorGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/color_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/textDark" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Colors"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/matchingGame"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/matching_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:backgroundTint="@color/textDark" />
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Matching"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/sortingGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sort_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/textDark" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Sort"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
         </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/matchingGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Matching Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-        </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/mathGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Math Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-        </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/memoryGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Memory Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-        </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/patternGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pattern Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-        </TableRow>
-        <TableRow android:gravity="center_horizontal">
-            <Button
-                android:id="@+id/sortingGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sorting Game"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/mathGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/math_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/textDark" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Math"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/memoryGame"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/memory_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:backgroundTint="@color/textDark" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Memory"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/patternGame"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pattern_icon"
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:backgroundTint="@color/textDark" />
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Pattern"
+                    android:textSize="14sp"
+                    android:textColor="@color/textDark" />
+            </LinearLayout>
         </TableRow>
     </TableLayout>
 

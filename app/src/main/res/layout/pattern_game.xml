@@ -2,20 +2,28 @@
 
 <TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/TableLayout03">
     <TableRow android:id="@+id/TableRow05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv1" android:paddingLeft="10sp" android:layout_weight="1"></TextView>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv1" android:paddingLeft="10sp" android:layout_weight="1"
+            android:textSize="14sp"></TextView>
     </TableRow>
     <Space  android:layout_marginTop="50dp"/>
-    <TableRow android:id="@+id/TableRow03" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:layout_marginBottom="20dp">
+    <TableRow android:id="@+id/TableRow03" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp">
     <LinearLayout android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp" android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center">
         <TextView
             android:id="@+id/patternText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:textColor="@color/textDark"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
     </TableRow>
     <LinearLayout android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" android:id="@+id/LinearLayout02" android:layout_width="205dp" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center">
+        android:layout_marginRight="20dp" android:id="@+id/LinearLayout02" android:layout_width="205dp" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center"
+        android:layout_marginTop="35dp">
         <Button
             android:layout_marginRight="30dp"
             android:id="@+id/answer1"
@@ -23,7 +31,9 @@
             android:text="1"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/textLight" />
 
         <Button
             android:layout_marginLeft="30dp"
@@ -32,7 +42,9 @@
             android:text="2"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/textLight" />
     </LinearLayout>
     <LinearLayout android:layout_marginLeft="20dp" android:layout_marginTop="20px"
         android:layout_marginRight="20dp" android:id="@+id/LinearLayout03" android:layout_width="205dp" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center">
@@ -43,7 +55,9 @@
             android:text="3"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@color/textLight" />
 
         <Button
             android:layout_marginLeft="30dp"
@@ -52,7 +66,9 @@
             android:text="4"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/textLight" />
     </LinearLayout>
 
     <Button

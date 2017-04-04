@@ -10,12 +10,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
@@ -35,9 +37,9 @@ public class ColorGame extends Activity {
     private Button answer3;
     private Button answer4;
 
-    int currentColor;
+    int currentColorIndex;
     int colorsLeft = 0;
-    int [] colors = {Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE};
+    int [] colors = new int[4];
     String [] texts = {"RED", "YELLOW", "GREEN", "BLUE"};
 
     private void setNewColor() {
@@ -46,21 +48,28 @@ public class ColorGame extends Activity {
         int picker1 = rand.nextInt(4);
         int picker2 = rand.nextInt(4);;
 
-        while (picker2 == picker1 || colors[picker2] == currentColor) {
+        while (picker2 == picker1 || picker2 == currentColorIndex) {
             picker2 = rand.nextInt(4);
         }
 
         colorSpot.setText(texts[picker1]);
         colorSpot.setTextColor(colors[picker2]);
 
-        currentColor = colors[picker2];
+        currentColorIndex = picker2;
     }
 
     private void checkSolution(Button button) {
         String text = button.getText().toString();
-        int color = Color.parseColor(text);
 
-        if (currentColor == color) {
+        int index = -1;
+        for (int i=0;i<texts.length;i++) {
+            if (texts[i].equals(text)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (currentColorIndex == index) {
             colorsLeft--;
             answer1.setEnabled(true);
             answer2.setEnabled(true);
@@ -96,6 +105,11 @@ public class ColorGame extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        colors[0] = Color.RED;
+        colors[1] = ResourcesCompat.getColor(getResources(), R.color.yellow, null);
+        colors[2] = ResourcesCompat.getColor(getResources(), R.color.colorPrimaryDark, null);
+        colors[3] = ResourcesCompat.getColor(getResources(), R.color.colorAccent, null);
 
         setContentView(R.layout.color_game);
 

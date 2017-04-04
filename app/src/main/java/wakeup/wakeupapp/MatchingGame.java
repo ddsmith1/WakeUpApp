@@ -14,11 +14,13 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
@@ -27,6 +29,7 @@ import java.util.TimerTask;
 public class MatchingGame extends Activity {
     final private int NR_ROWS = 4;
     final private int NR_COLS = 3;
+    final private int TOTAL_NR_SHAPES = NR_ROWS*NR_COLS;
     final private static Object LOCK = new Object();
 
     private int row = -1;
@@ -68,7 +71,7 @@ public class MatchingGame extends Activity {
     }
 
     public void startGame() {
-        cards = new int[NR_ROWS][NR_COLS];
+        cards = new int[NR_COLS][NR_ROWS];
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
         tr.removeAllViews();
         mainTable = new TableLayout(context);
@@ -90,14 +93,21 @@ public class MatchingGame extends Activity {
     private void loadImages() {
         images = new ArrayList<Drawable>();
 
-        images.add(getDrawable(R.drawable.card1));
-        images.add(getDrawable(R.drawable.card2));
-        images.add(getDrawable(R.drawable.card3));
-        images.add(getDrawable(R.drawable.card4));
-        images.add(getDrawable(R.drawable.card5));
-        images.add(getDrawable(R.drawable.card6));
-//        images.add(getDrawable(R.drawable.card7));
-//        images.add(getDrawable(R.drawable.card8));
+        images.add(getDrawable(R.mipmap.green_circle));
+        images.add(getDrawable(R.mipmap.green_rect));
+        images.add(getDrawable(R.mipmap.green_tri));
+
+        images.add(getDrawable(R.mipmap.yellow_circle));
+        images.add(getDrawable(R.mipmap.yellow_rect));
+        images.add(getDrawable(R.mipmap.yellow_tri));
+
+        images.add(getDrawable(R.mipmap.red_circle));
+        images.add(getDrawable(R.mipmap.red_rect));
+        images.add(getDrawable(R.mipmap.red_tri));
+
+        images.add(getDrawable(R.mipmap.blue_circle));
+        images.add(getDrawable(R.mipmap.blue_rect));
+        images.add(getDrawable(R.mipmap.blue_tri));
     }
 
     private void loadCards() {
@@ -105,7 +115,7 @@ public class MatchingGame extends Activity {
             int size = NR_COLS*NR_ROWS;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < TOTAL_NR_SHAPES; i++) {
                 list.add(new Integer(i));
             }
 
@@ -119,7 +129,7 @@ public class MatchingGame extends Activity {
                 }
 
                 temp = list.remove(temp).intValue(); //removes and gets value of removed item in list
-                cards[i % 3][i / 3] = temp % (size / 2);
+                cards[i % NR_COLS][i / NR_COLS] = temp % (TOTAL_NR_SHAPES / 2);
                 cardsLeft++;
             }
         } catch (Exception e) {
@@ -139,7 +149,7 @@ public class MatchingGame extends Activity {
     }
 
     private View createImageButton(int x, int y) {
-        Button button = new Button(context);
+        ImageButton button = new ImageButton(context);
         button.setBackground(backImage);
         button.setId(100 * x + y);
         button.setOnClickListener(buttonListener);
@@ -162,11 +172,11 @@ public class MatchingGame extends Activity {
                 int x = id / 100;
                 int y = id % 100;
 
-                turnCard((Button) view, x, y);
+                turnCard((ImageButton) view, x, y);
             }
         }
 
-        private void turnCard(Button button, int x, int y) {
+        private void turnCard(ImageButton button, int x, int y) {
             button.setBackground(images.get(cards[x][y]));
 
             if (firstCard == null) { //haven't clicked a card yet

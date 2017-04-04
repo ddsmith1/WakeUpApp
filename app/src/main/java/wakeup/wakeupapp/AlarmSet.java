@@ -5,8 +5,10 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TimePicker;
 import android.view.View;
 import android.widget.Toast;
@@ -31,7 +33,10 @@ public class AlarmSet extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.M)
     public void OnToggleClicked(View view) {
         long time;
+
         if (((ToggleButton) view).isChecked()) {
+            ((ToggleButton) view).setTextColor(ResourcesCompat.getColor(getResources(), R.color.textDark, null));
+
             Toast.makeText(AlarmSet.this, "ALARM ON", Toast.LENGTH_SHORT).show();
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());
@@ -53,6 +58,8 @@ public class AlarmSet extends AppCompatActivity {
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pendingIntent);
         }
         else {
+            ((ToggleButton) view).setTextColor(ResourcesCompat.getColor(getResources(), R.color.textLight, null));
+
             alarmManager.cancel(pendingIntent);
             AlarmReceiver.stopMedia();
             Toast.makeText(AlarmSet.this, "ALARM OFF", Toast.LENGTH_SHORT).show();

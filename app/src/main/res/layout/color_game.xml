@@ -13,7 +13,12 @@
             android:text="Select the color the text is written in."
             android:id="@+id/colorText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="@color/textDark"
+            android:textStyle="normal|bold"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_marginBottom="15dp" />
     </LinearLayout>
     </TableRow>
     <LinearLayout android:layout_marginLeft="20dp"
@@ -25,7 +30,8 @@
             android:text="RED"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+            android:textColor="@color/textDark" />
 
         <Button
             android:layout_marginLeft="30dp"
@@ -34,7 +40,8 @@
             android:text="YELLOW"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+            android:textColor="@color/textDark" />
     </LinearLayout>
     <LinearLayout android:layout_marginLeft="20dp" android:layout_marginTop="20px"
         android:layout_marginRight="20dp" android:id="@+id/LinearLayout03" android:layout_width="205dp" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center">
@@ -45,7 +52,8 @@
             android:text="GREEN"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+        android:textColor="@color/textDark" />
 
         <Button
             android:layout_marginLeft="30dp"
@@ -54,7 +62,8 @@
             android:text="BLUE"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            style="@style/Widget.AppCompat.Button" />
+            style="@style/Widget.AppCompat.Button"
+            android:textColor="@color/textDark" />
     </LinearLayout>
 
     <Button
@@ -65,5 +74,7 @@
         android:text="Activity Complete"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        style="@style/Widget.AppCompat.Button" />
+        style="@style/Widget.AppCompat.Button"
+        android:textColor="@color/textLight"
+        android:backgroundTint="@color/colorAccent" />
 </TableLayout>
