@@ -29,14 +29,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SortingGame extends Activity {
+    private final int NR_ITEMS = 12;
+
     private Stack<SortingItem> items;
     private List<SortingItem> images;
     private Context context;
 
     private ImageView imageSpot;
     private Button endGame;
-    private Button leftSort;
-    private Button rightSort;
+
+    private ArrayList<Button> buttons= new ArrayList<Button>();
 
     int itemsLeft = 0;
 
@@ -53,16 +55,21 @@ public class SortingGame extends Activity {
         }
     }
 
-    private void checkSorting(String text) {
-        //Should be something real instead
-        if (items.peek().color.equals(text.toLowerCase())) { //maybe also shape?
+    public void checkSorting(View view) {
+        String text = ((Button) view).getText().toString();
+        if (items.peek().color.equals(text.toLowerCase()) || items.peek().shape.equals(text.toLowerCase())) { //maybe also shape?
             items.pop();
             itemsLeft--;
 
+            for (Button btn: buttons) {
+                btn.setEnabled(true);
+            }
+
             if (items.empty()) {
+                for (Button btn: buttons) {
+                    btn.setVisibility(View.GONE);
+                }
                 endGame.setVisibility(View.VISIBLE);
-                leftSort.setVisibility(View.INVISIBLE);
-                rightSort.setVisibility(View.INVISIBLE);
                 imageSpot.setVisibility(View.INVISIBLE);
                 endGame.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -74,7 +81,11 @@ public class SortingGame extends Activity {
                 imageSpot.setImageDrawable(items.peek().drawable);
             }
         } else {
-//                items.push(createCard()); //maybe later?
+            ((Button) view).setEnabled(false);
+//            if (items.size() < 10) {
+//                items.push(images.get(new Random().nextInt(images.size())));
+//                itemsLeft++;
+//            }
         }
 
         ((TextView) findViewById(R.id.tv1)).setText("Items left: " + itemsLeft);
@@ -89,21 +100,6 @@ public class SortingGame extends Activity {
 
         imageSpot = (ImageView) findViewById(R.id.ImageView);
         context = imageSpot.getContext();
-
-        leftSort = (Button) findViewById(R.id.leftSort);
-        rightSort = (Button) findViewById(R.id.rightSort);
-
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Button btn = (Button) view;
-                checkSorting(btn.getText().toString());
-            }
-        };
-
-        leftSort.setOnClickListener(listener);
-        rightSort.setOnClickListener(listener);
-
 
         endGame = (Button) findViewById(R.id.endbutton);
         endGame.setVisibility(View.INVISIBLE);
@@ -121,6 +117,31 @@ public class SortingGame extends Activity {
         loadItems();
         imageSpot.setImageDrawable(items.peek().drawable);
         ((TextView) findViewById(R.id.tv1)).setText("Items left: " + itemsLeft);
+
+
+        if (new Random().nextInt(2) == 0) {
+            buttons.add((Button) findViewById(R.id.redSort));
+            buttons.add((Button) findViewById(R.id.yellowSort));
+            buttons.add((Button) findViewById(R.id.redSort));
+            buttons.add((Button) findViewById(R.id.blueSort));
+
+            findViewById(R.id.shapeButtons1).setVisibility(View.GONE);
+            findViewById(R.id.shapeButtons2).setVisibility(View.GONE);
+
+            findViewById(R.id.colorButtons1).setVisibility(View.VISIBLE);
+            findViewById(R.id.colorButtons2).setVisibility(View.VISIBLE);
+        }
+        else {
+            buttons.add((Button) findViewById(R.id.triangleSort));
+            buttons.add((Button) findViewById(R.id.circleSort));
+            buttons.add((Button) findViewById(R.id.squareSort));
+
+            findViewById(R.id.shapeButtons1).setVisibility(View.VISIBLE);
+            findViewById(R.id.shapeButtons2).setVisibility(View.VISIBLE);
+
+            findViewById(R.id.colorButtons1).setVisibility(View.GONE);
+            findViewById(R.id.colorButtons2).setVisibility(View.GONE);
+        }
     }
 
     private void loadImages() {
@@ -133,7 +154,7 @@ public class SortingGame extends Activity {
         images.add(item1);
 
         image = getDrawable(R.mipmap.green_rect);
-        SortingItem item2 = new SortingItem(image, "green", "rectangle");
+        SortingItem item2 = new SortingItem(image, "green", "square");
         images.add(item2);
 
         image = getDrawable(R.mipmap.green_tri);
@@ -146,7 +167,7 @@ public class SortingGame extends Activity {
         images.add(item4);
 
         image = getDrawable(R.mipmap.yellow_rect);
-        SortingItem item5 = new SortingItem(image, "yellow", "rectangle");
+        SortingItem item5 = new SortingItem(image, "yellow", "square");
         images.add(item5);
 
         image = getDrawable(R.mipmap.yellow_tri);
@@ -159,7 +180,7 @@ public class SortingGame extends Activity {
         images.add(item7);
 
         image = getDrawable(R.mipmap.blue_rect);
-        SortingItem item8 = new SortingItem(image, "blue", "rectangle");
+        SortingItem item8 = new SortingItem(image, "blue", "square");
         images.add(item8);
 
         image = getDrawable(R.mipmap.blue_tri);
@@ -172,7 +193,7 @@ public class SortingGame extends Activity {
         images.add(item10);
 
         image = getDrawable(R.mipmap.red_rect);
-        SortingItem item11 = new SortingItem(image, "red", "rectangle");
+        SortingItem item11 = new SortingItem(image, "red", "square");
         images.add(item11);
 
         image = getDrawable(R.mipmap.red_tri);
@@ -182,7 +203,7 @@ public class SortingGame extends Activity {
 
     private void loadItems() {
         try {
-            int size = 8;
+            int size = NR_ITEMS;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
             for (int i = 0; i < size; i++) {
