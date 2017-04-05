@@ -6,6 +6,7 @@ package wakeup.wakeupapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.shapes.Shape;
@@ -22,6 +23,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
@@ -32,7 +34,6 @@ public class SortingGame extends Activity {
     private final int NR_IMAGES = 12;
     private final int NR_ITEMS_TO_SORT = 20;
 
-    private Stack<SortingItem> items;
     private List<SortingItem> images;
     private Context context;
 
@@ -60,15 +61,11 @@ public class SortingGame extends Activity {
 
     public void checkSorting(View view) {
         String text = ((Button) view).getText().toString();
-        if (items.peek().color.equals(text.toLowerCase()) || items.peek().shape.equals(text.toLowerCase())) { //maybe also shape?
-            items.pop();
+        if (images.get(0).color.equals(text.toLowerCase()) || images.get(0).shape.equals(text.toLowerCase())) {
+            images.remove(0);
             itemsLeft--;
 
-            for (Button btn: buttons) {
-                btn.setEnabled(true);
-            }
-
-            if (items.empty()) {
+            if (images.size() == 0) {
                 for (Button btn: buttons) {
                     btn.setVisibility(View.GONE);
                 }
@@ -83,19 +80,19 @@ public class SortingGame extends Activity {
             } else {
                 setNextDrawable();
             }
+
+            for (Button btn: buttons) {
+                btn.setEnabled(true);
+            }
         } else {
-            ((Button) view).setEnabled(false);
-//            if (items.size() < 10) {
-//                items.push(images.get(new Random().nextInt(images.size())));
-//                itemsLeft++;
-//            }
+            view.setEnabled(false);
         }
 
         ((TextView) findViewById(R.id.tv1)).setText("Items left: " + itemsLeft);
     }
 
     private void setNextDrawable() {
-        imageSpot.setImageDrawable(items.peek().drawable);
+        imageSpot.setImageDrawable(images.get(0).drawable);
 
         buttons = new ArrayList<Button>();
         Boolean nextIsShapeSort;
@@ -169,7 +166,6 @@ public class SortingGame extends Activity {
     }
 
     public void startGame() {
-        items = new Stack<SortingItem>();
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
         tr.removeAllViews();
         imageSpot = new ImageView(context);
@@ -239,29 +235,11 @@ public class SortingGame extends Activity {
 
     private void loadItems() {
         try {
-            ArrayList<Integer> list = new ArrayList<Integer>();
+            Collections.shuffle(images);
 
-            for (int i = 0; i < NR_IMAGES; i++) {
-                list.add(new Integer(i));
-            }
-
-            Random rand = new Random();
-
-            for (int i = NR_IMAGES - 1; i >= 0; i--) {
-                int temp = 0;
-
-                if (i > 0) {
-                    temp = rand.nextInt(i+1);
-                }
-
-                temp = list.remove(temp).intValue();
-
-                items.push(images.get(temp));
-            }
-
-            for (int i=items.size(); i<NR_ITEMS_TO_SORT; i++) {
-                SortingItem itemToAddAgain = items.get(rand.nextInt(items.size()));
-                items.push(itemToAddAgain);
+            for (int i=NR_IMAGES; i<NR_ITEMS_TO_SORT; i++) {
+                SortingItem itemToAddAgain = images.get(new Random().nextInt(NR_IMAGES));
+                images.add(itemToAddAgain);
             }
         } catch (Exception e) {
             Log.e("loadItems()", e + "");
