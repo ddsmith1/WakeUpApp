@@ -29,6 +29,7 @@
         <activity android:name=".MemoryGame" />
         <activity android:name=".PatternGame" />
         <activity android:name=".SortingGame" />
+        <activity android:name=".PatternMemoryGame" />
     </application>
 
 </manifest>

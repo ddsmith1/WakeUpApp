@@ -1,6 +1,7 @@
 package wakeup.wakeupapp;
 
 import android.content.Intent;
+import android.media.MediaCodec;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class PracticeMenu extends AppCompatActivity {
     private ImageButton PatternGame;
     private ImageButton SortingGame;
     private ImageButton MathGame;
+    private ImageButton PatternMemoryGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class PracticeMenu extends AppCompatActivity {
         PatternGame = (ImageButton) findViewById(R.id.patternGame);
         SortingGame = (ImageButton) findViewById(R.id.sortingGame);
         MathGame = (ImageButton) findViewById(R.id.mathGame);
+        PatternMemoryGame = (ImageButton) findViewById(R.id.patternMemoryGame);
 
         SampleGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +96,15 @@ public class PracticeMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        PatternMemoryGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PracticeMenu.this, PatternMemoryGame.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }
