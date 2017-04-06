@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
@@ -153,6 +155,12 @@ public class MatchingGame extends Activity {
         button.setBackground(backImage);
         button.setId(100 * x + y);
         button.setOnClickListener(buttonListener);
+
+        int pixelDimension = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics());
+
+        TableRow.LayoutParams params = new TableRow.LayoutParams(pixelDimension, pixelDimension);
+        params.setMargins(8, 8, 8, 8);
+        button.setLayoutParams(params);
 
         return button;
     }
