@@ -55,30 +55,26 @@ public class MemoryGame extends Activity {
     private ShowModifiedHandler showModifiedHandler;
     private Handler handler = new Handler();
 
-    private ImageButton answer1;
-    private ImageButton answer2;
-    private ImageButton answer3;
-    private ImageButton answer4;
     private Button endGame;
+
+    private ImageButton [] answerButtons = new ImageButton[4];
+    private int [] greyShapes = {R.mipmap.grey_circle, R.mipmap.grey_triangle, R.mipmap.grey_rectangle};
 
     int roundsLeft = 3;
 
     private void checkSelection(ImageButton button){
-        if (removedCardImage == button.getBackground()) { //maybe also shape?
+        if (removedCardImage == button.getBackground()) {
             cardQueue.get(removalIndex).button.setBackground(removedCardImage);
             mainTable.setVisibility(View.INVISIBLE);
             roundsLeft--;
-            answer1.setEnabled(true);
-            answer2.setEnabled(true);
-            answer3.setEnabled(true);
-            answer4.setEnabled(true);
+
+            for (ImageButton btn: answerButtons) {
+                btn.setEnabled(true);
+                btn.setVisibility(View.INVISIBLE);
+            }
+
             Toast toast = Toast.makeText(context, "Correct", Toast.LENGTH_LONG);
             toast.show();
-
-            answer1.setVisibility(View.INVISIBLE);
-            answer2.setVisibility(View.INVISIBLE);
-            answer3.setVisibility(View.INVISIBLE);
-            answer4.setVisibility(View.INVISIBLE);
 
             if (roundsLeft == 0) {
                 endGame.setVisibility(View.VISIBLE);
@@ -101,6 +97,19 @@ public class MemoryGame extends Activity {
             }
         } else {
             button.setEnabled(false);
+
+            //TODO: need to actually check shape. this aint right
+            if (button.getId() == R.id.triangleSort) {
+                button.setBackground(getDrawable(greyShapes[1]));
+            }
+            else if (button.getId() == R.id.circleSort) {
+                button.setBackground(getDrawable(greyShapes[0]));
+            }
+            else {
+                button.setBackground(getDrawable(greyShapes[2]));
+            }
+
+
             if (roundsLeft < 3) {
                 roundsLeft++;
             }
@@ -124,10 +133,10 @@ public class MemoryGame extends Activity {
         endGame = (Button) findViewById(R.id.endbutton);
         endGame.setVisibility(View.INVISIBLE);
 
-        answer1 = (ImageButton) findViewById(R.id.answer1);
-        answer2 = (ImageButton) findViewById(R.id.answer2);
-        answer3 = (ImageButton) findViewById(R.id.answer3);
-        answer4 = (ImageButton) findViewById(R.id.answer4);
+        answerButtons[0] = (ImageButton) findViewById(R.id.answer1);
+        answerButtons[1] = (ImageButton) findViewById(R.id.answer2);
+        answerButtons[2] = (ImageButton) findViewById(R.id.answer3);
+        answerButtons[3] = (ImageButton) findViewById(R.id.answer4);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -137,15 +146,10 @@ public class MemoryGame extends Activity {
             }
         };
 
-        answer1.setOnClickListener(listener);
-        answer2.setOnClickListener(listener);
-        answer3.setOnClickListener(listener);
-        answer4.setOnClickListener(listener);
-
-        answer1.setVisibility(View.INVISIBLE);
-        answer2.setVisibility(View.INVISIBLE);
-        answer3.setVisibility(View.INVISIBLE);
-        answer4.setVisibility(View.INVISIBLE);
+        for (ImageButton btn: answerButtons) {
+            btn.setOnClickListener(listener);
+            btn.setVisibility(View.INVISIBLE);
+        }
 
         startGame();
     }
