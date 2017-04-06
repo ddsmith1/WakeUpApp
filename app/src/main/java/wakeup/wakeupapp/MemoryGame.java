@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +27,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Random;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -45,6 +48,10 @@ public class MemoryGame extends Activity {
     private Drawable removedCardImage;
     private int removalIndex;
     private List<Drawable> images;
+    Set<Drawable> triangles;
+    Set<Drawable> squares;
+    Set<Drawable> circles;
+
     private LinkedList<Card> cardQueue;
     private LinkedList<Drawable> fakeAnswerPool = new LinkedList<Drawable>();
     private Context context;
@@ -73,9 +80,6 @@ public class MemoryGame extends Activity {
                 btn.setVisibility(View.INVISIBLE);
             }
 
-            Toast toast = Toast.makeText(context, "Correct", Toast.LENGTH_LONG);
-            toast.show();
-
             if (roundsLeft == 0) {
                 endGame.setVisibility(View.VISIBLE);
                 mainTable.setVisibility(View.GONE);
@@ -88,7 +92,7 @@ public class MemoryGame extends Activity {
                     }
                 });
             } else {
-                ((TextView)findViewById(R.id.tv2)).setText("Another round coming!");
+                ((TextView)findViewById(R.id.tv2)).setText("Correct! Another round coming!");
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         startGame();
@@ -98,11 +102,10 @@ public class MemoryGame extends Activity {
         } else {
             button.setEnabled(false);
 
-            //TODO: need to actually check shape. this aint right
-            if (button.getId() == R.id.triangleSort) {
+            if (triangles.contains(button.getBackground())) {
                 button.setBackground(getDrawable(greyShapes[1]));
             }
-            else if (button.getId() == R.id.circleSort) {
+            else if (circles.contains(button.getBackground())) {
                 button.setBackground(getDrawable(greyShapes[0]));
             }
             else {
@@ -178,21 +181,33 @@ public class MemoryGame extends Activity {
     private void loadImages() {
         images = new ArrayList<Drawable>();
 
-        images.add(getDrawable(R.mipmap.green_circle));
-        images.add(getDrawable(R.mipmap.green_rect));
-        images.add(getDrawable(R.mipmap.green_tri));
+        triangles = new HashSet<Drawable>();
+        triangles.add(getDrawable(R.mipmap.yellow_tri));
+        triangles.add(getDrawable(R.mipmap.green_tri));
+        triangles.add(getDrawable(R.mipmap.red_tri));
+        triangles.add(getDrawable(R.mipmap.blue_tri));
 
-        images.add(getDrawable(R.mipmap.yellow_circle));
-        images.add(getDrawable(R.mipmap.yellow_rect));
-        images.add(getDrawable(R.mipmap.yellow_tri));
+        squares = new HashSet<Drawable>();
+        squares.add(getDrawable(R.mipmap.yellow_rect));
+        squares.add(getDrawable(R.mipmap.green_rect));
+        squares.add(getDrawable(R.mipmap.red_rect));
+        squares.add(getDrawable(R.mipmap.blue_rect));
 
-        images.add(getDrawable(R.mipmap.red_circle));
-        images.add(getDrawable(R.mipmap.red_rect));
-        images.add(getDrawable(R.mipmap.red_tri));
+        circles = new HashSet<Drawable>();
+        circles.add(getDrawable(R.mipmap.yellow_circle));
+        circles.add(getDrawable(R.mipmap.green_circle));
+        circles.add(getDrawable(R.mipmap.red_circle));
+        circles.add(getDrawable(R.mipmap.blue_circle));
 
-        images.add(getDrawable(R.mipmap.blue_circle));
-        images.add(getDrawable(R.mipmap.blue_rect));
-        images.add(getDrawable(R.mipmap.blue_tri));
+        for (Drawable circle: circles) {
+            images.add(circle);
+        }
+        for (Drawable square: squares) {
+            images.add(square);
+        }
+        for (Drawable tri: triangles) {
+            images.add(tri);
+        }
     }
 
     private void showCards() {
@@ -287,6 +302,13 @@ public class MemoryGame extends Activity {
     private View createImageButton(int x, int y) {
         ImageButton button = new ImageButton(context);
         button.setId(100 * x + y);
+
+        int pixelDimension = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics());
+
+        TableRow.LayoutParams params = new TableRow.LayoutParams(pixelDimension, pixelDimension);
+        params.setMargins(8, 8, 8, 8);
+        button.setLayoutParams(params);
+
         Card card = new Card(button, x, y);
         cardQueue.add(card);
 
@@ -357,12 +379,9 @@ public class MemoryGame extends Activity {
 
             Collections.shuffle(answers);
 
-            ImageButton[] buttons = {answer1, answer2, answer3, answer4};
-
-            for (int i=0; i<4; i++) {
-
-                buttons[i].setBackground(answers.get(i));
-                buttons[i].setVisibility(View.VISIBLE);
+            for (int i=0; i<answerButtons.length; i++) {
+                answerButtons[i].setBackground(answers.get(i));
+                answerButtons[i].setVisibility(View.VISIBLE);
             }
             findViewById(R.id.tv2).setVisibility(View.VISIBLE);
             ((TextView) findViewById(R.id.tv2)).setText("The missing item is... ");
