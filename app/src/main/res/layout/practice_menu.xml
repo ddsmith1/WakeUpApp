@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
-                    android:id="@+id/sampleGame0"
+                    android:id="@+id/sampleGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/distract_icon"
@@ -100,11 +100,11 @@
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
 
                 <ImageButton
-                    android:id="@+id/sampleGame"
+                    android:id="@+id/patternMemoryGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/distract_icon"
+                    android:background="@drawable/memory_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
 
@@ -112,7 +112,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Sample"
+                    android:text="Pattern Memory Game"
                     android:textSize="14sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
