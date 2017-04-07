@@ -15,8 +15,8 @@ public class MainMenu extends AppCompatActivity {
     private ImageButton practiceMenu;
     private ImageButton startActivity;
     private ImageButton help;
-    final int NUM_CHOICES = 1;
-    final int NUM_GAMES = 1;
+    final int NUM_CHOICES = 3;
+    final int NUM_GAMES = 7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,25 +56,51 @@ public class MainMenu extends AppCompatActivity {
                 for(int i = 0; i < NUM_CHOICES; i++) { //loop to pick game choices
                     int choice;
 
-                    while(true) { //loop to check for repeated choices
+                    while (true) { //loop to check for repeated choices
                         boolean flag = true;
                         choice = random.nextInt(NUM_GAMES) + 1;
-                        for (int j = i - 1; j >= 0; j--){ //look for repeated choice from previous choices
+                        for (int j = i - 1; j >= 0; j--) { //look for repeated choice from previous choices
                             if (choices[j] == choice) {
                                 flag = false; //if repeated choice, set flag to false
                             }
                         }
 
-                        if(flag) { //if no repeated choice, break from while statement
+                        if (flag) { //if no repeated choice, break from while statement
                             choices[i] = choice;
                             break;
                         }
                     }
+                }
 
+                for(int i = 0; i < NUM_CHOICES; i++) {
                     Intent intent = null;
-                    switch(choice) { //switch for different games, currently only one
+                    switch (choices[i]) { //switch for different games, currently only one
                         case 1:
-                            intent = new Intent(MainMenu.this, SampleGame.class);
+                            intent = new Intent(MainMenu.this, ColorGame.class);
+                            startActivity(intent);
+                            break;
+                        case 2:
+                            intent = new Intent(MainMenu.this, DistractionGame.class);
+                            startActivity(intent);
+                            break;
+                        case 3:
+                            intent = new Intent(MainMenu.this, MatchingGame.class);
+                            startActivity(intent);
+                            break;
+                        case 4:
+                            intent = new Intent(MainMenu.this, MathGame.class);
+                            startActivity(intent);
+                            break;
+                        case 5:
+                            intent = new Intent(MainMenu.this, MemoryGame.class);
+                            startActivity(intent);
+                            break;
+                        case 6:
+                            intent = new Intent(MainMenu.this, PatternGame.class);
+                            startActivity(intent);
+                            break;
+                        case 7:
+                            intent = new Intent(MainMenu.this, SortingGame.class);
                             startActivity(intent);
                             break;
                     }
