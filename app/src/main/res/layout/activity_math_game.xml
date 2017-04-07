@@ -11,11 +11,29 @@
     tools:context="wakeup.wakeupapp.MathGame">
 
     <Button
+        android:id="@+id/expression4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blank"
+        android:layout_below="@+id/expression3"
+        android:layout_alignStart="@+id/expression3"
+        android:layout_marginTop="56dp" />
+
+    <Button
+        android:id="@+id/expression3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blank"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/expression2"
+        android:layout_alignStart="@+id/expression2" />
+
+    <Button
         android:id="@+id/expression1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Blank"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="41dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -24,26 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Blank"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="50dp"
         android:layout_below="@+id/expression1"
         android:layout_alignStart="@+id/expression1" />
-
-    <Button
-        android:id="@+id/expression4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blank"
-        android:layout_marginBottom="42dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/expression3" />
-
-    <Button
-        android:id="@+id/expression3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blank"
-        android:layout_below="@+id/expression2"
-        android:layout_alignStart="@+id/expression2"
-        android:layout_marginTop="39dp" />
 
 </RelativeLayout>
