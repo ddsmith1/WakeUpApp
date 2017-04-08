@@ -33,7 +33,7 @@ public class PatternMemoryGame extends AppCompatActivity {
 
     private final int PATTERN_SIZE = 12;
     private final int NUM_TO_MATCH = 5;
-    private final int SCORE_TO_REACH = 3;
+    private final int SCORE_TO_REACH = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +47,6 @@ public class PatternMemoryGame extends AppCompatActivity {
         gameSetup();
     }
 
-    private void initializePatterns() {
-        pattern = new int[PATTERN_SIZE];
-        userPattern = new int[PATTERN_SIZE];
-        clearPatterns();
-    }
-
-    private void clearPatterns() {
-        for(int i = 0; i < PATTERN_SIZE; i++) {
-            pattern[i] = 0;
-            userPattern[i] = 0;
-        }
-    }
-
     private void init() {
         random = new Random();
         score = 0;
@@ -67,6 +54,12 @@ public class PatternMemoryGame extends AppCompatActivity {
         initButtons();
         initListeners();
         attachListeners();
+    }
+
+    private void initializePatterns() {
+        pattern = new int[PATTERN_SIZE];
+        userPattern = new int[PATTERN_SIZE];
+        clearPatterns();
     }
 
     private void initButtons() {
@@ -107,10 +100,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[1].getBackground() == blueSquare) {
                     imageButtons[1].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[1] = 1;
                 } else {
                     imageButtons[1].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[1] = 0;
                 }
             }
         };
@@ -120,10 +113,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[2].getBackground() == blueSquare) {
                     imageButtons[2].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[2] = 1;
                 } else {
                     imageButtons[2].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[2] = 0;
                 }
             }
         };
@@ -133,10 +126,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[3].getBackground() == blueSquare) {
                     imageButtons[3].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[3] = 1;
                 } else {
                     imageButtons[3].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[3] = 0;
                 }
             }
         };
@@ -146,10 +139,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[4].getBackground() == blueSquare) {
                     imageButtons[4].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[4] = 1;
                 } else {
                     imageButtons[4].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[4] = 0;
                 }
             }
         };
@@ -159,10 +152,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[5].getBackground() == blueSquare) {
                     imageButtons[5].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[5] = 1;
                 } else {
                     imageButtons[5].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[5] = 0;
                 }
             }
         };
@@ -172,10 +165,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[6].getBackground() == blueSquare) {
                     imageButtons[6].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[6] = 1;
                 } else {
                     imageButtons[6].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[6] = 0;
                 }
             }
         };
@@ -185,10 +178,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[7].getBackground() == blueSquare) {
                     imageButtons[7].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[7] = 1;
                 } else {
                     imageButtons[7].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[7] = 0;
                 }
             }
         };
@@ -198,10 +191,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[8].getBackground() == blueSquare) {
                     imageButtons[8].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[8] = 1;
                 } else {
                     imageButtons[8].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[8] = 0;
                 }
             }
         };
@@ -211,10 +204,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[9].getBackground() == blueSquare) {
                     imageButtons[9].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[9] = 1;
                 } else {
                     imageButtons[9].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[9] = 0;
                 }
             }
         };
@@ -224,10 +217,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[10].getBackground() == blueSquare) {
                     imageButtons[10].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[10] = 1;
                 } else {
                     imageButtons[10].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[10] = 0;
                 }
             }
         };
@@ -237,10 +230,10 @@ public class PatternMemoryGame extends AppCompatActivity {
             public void onClick(View v) {
                 if (imageButtons[11].getBackground() == blueSquare) {
                     imageButtons[11].setBackground(redSquare);
-                    userPattern[0] = 1;
+                    userPattern[11] = 1;
                 } else {
                     imageButtons[11].setBackground(blueSquare);
-                    userPattern[0] = 0;
+                    userPattern[11] = 0;
                 }
             }
         };
@@ -280,6 +273,20 @@ public class PatternMemoryGame extends AppCompatActivity {
         advanceButton.setOnClickListener(advanceListener);
     }
 
+    private void gameSetup() {
+        clearButtons();
+        clearPatterns();
+        generatePattern();
+        showPattern();
+        checkButton.setVisibility(INVISIBLE);
+    }
+
+    private void clearPatterns() {
+        for(int i = 0; i < PATTERN_SIZE; i++) {
+            pattern[i] = 0;
+            userPattern[i] = 0;
+        }
+    }
 
     private void generatePattern() {
         int count = 0; //only want user to have to remember 5
@@ -296,6 +303,14 @@ public class PatternMemoryGame extends AppCompatActivity {
         }
     }
 
+    private void showPattern() {
+        for(int i = 0; i < PATTERN_SIZE; i++) {
+            if(pattern[i] == 1) {
+                imageButtons[i].setBackground(redSquare);
+            }
+        }
+    }
+
     private boolean checkPatterns() {
         for(int i = 0; i < PATTERN_SIZE; i++) {
             if(pattern[i] != userPattern[i]) {
@@ -303,21 +318,6 @@ public class PatternMemoryGame extends AppCompatActivity {
             }
         }
         return true;
-    }
-
-    private void gameSetup() {
-        clearPatterns();
-        generatePattern();
-        showPattern();
-        checkButton.setVisibility(INVISIBLE);
-    }
-
-    private void showPattern() {
-        for(int i = 0; i < PATTERN_SIZE; i++) {
-            if(pattern[i] == 1) {
-                imageButtons[i].setBackground(redSquare);
-            }
-        }
     }
 
     private void clearButtons() {
