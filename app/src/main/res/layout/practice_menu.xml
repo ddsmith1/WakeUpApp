@@ -104,7 +104,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/memory_icon"
+                    android:background="@drawable/square_pattern_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
 
