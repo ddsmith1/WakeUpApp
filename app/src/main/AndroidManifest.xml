@@ -20,7 +20,9 @@
         <activity android:name=".PracticeMenu" />
         <activity android:name=".Help" />
         <activity android:name=".AlarmSet" />
+
         <receiver android:name=".AlarmReceiver" />
+
         <activity android:name=".SampleGame" />
         <activity android:name=".ColorGame" />
         <activity android:name=".DistractionGame" />
@@ -30,6 +32,7 @@
         <activity android:name=".PatternGame" />
         <activity android:name=".SortingGame" />
         <activity android:name=".PatternMemoryGame" />
+        <activity android:name=".ReactionGame"/>
     </application>
 
 </manifest>
