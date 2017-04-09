@@ -60,7 +60,7 @@
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
-                    android:id="@+id/sampleGame4"
+                    android:id="@+id/reactionGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Sample"
+                    android:text="Reaction"
                     android:textSize="14sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
