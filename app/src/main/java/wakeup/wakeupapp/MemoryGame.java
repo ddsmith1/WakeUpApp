@@ -9,6 +9,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
@@ -25,8 +26,10 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -224,9 +227,15 @@ public class MemoryGame extends Activity {
             cardQueue.add(card);
         }
 
-        TimerTask showCardsTask = new TimerTask() {
-            @Override
-            public void run() {
+        CountDownTimer countdown = new CountDownTimer(10500, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                ((TextView)findViewById(R.id.tv2)).setVisibility(View.VISIBLE);
+                ((TextView)findViewById(R.id.tv2)).setText("Time left to memorize cards: " + new SimpleDateFormat("ss").format(new Date(millisUntilFinished)));
+            }
+
+            public void onFinish() {
+                ((TextView)findViewById(R.id.tv2)).setVisibility(View.INVISIBLE);
                 try {
                     synchronized (LOCK) {
                         showCardsHandler.sendEmptyMessage(0);
@@ -235,10 +244,9 @@ public class MemoryGame extends Activity {
                     Log.e("E1", e.getMessage());
                 }
             }
-        };
+        }.start();
 
         Timer timer = new Timer(false);
-        timer.schedule(showCardsTask, 5000);
 
         TimerTask showModifiedTask = new TimerTask() {
             @Override
@@ -253,7 +261,7 @@ public class MemoryGame extends Activity {
             }
         };
 
-        timer.schedule(showModifiedTask, 10000);
+        timer.schedule(showModifiedTask, 13000);
     }
 
     private void loadCards() {
