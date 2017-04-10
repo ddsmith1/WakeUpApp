@@ -37,7 +37,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MemoryGame extends Activity {
-    final private int SQUARE_SIZE = 3;
+    final private int ROWS = 2;
+    final private int COLS = 3;
     final private int TOTAL_NR_SHAPES = 12;
     final private static Object LOCK = new Object();
 
@@ -128,7 +129,7 @@ public class MemoryGame extends Activity {
         loadImages();
         setContentView(R.layout.memory_game);
 
-        backImage = getDrawable(R.drawable.back);
+        backImage = getDrawable(R.mipmap.back_image);
 
         mainTable = (TableLayout) findViewById(R.id.TableLayout03);
         context = mainTable.getContext();
@@ -162,13 +163,13 @@ public class MemoryGame extends Activity {
 
         mainTable.setVisibility(View.VISIBLE);
 
-        cards = new int[SQUARE_SIZE][SQUARE_SIZE];
+        cards = new int[COLS][ROWS];
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
         tr.removeAllViews();
         mainTable = new TableLayout(context);
         tr.addView(mainTable);
 
-        for (int y = 0; y < SQUARE_SIZE; y++) {
+        for (int y = 0; y < ROWS; y++) {
             mainTable.addView(createCardRow(y));
         }
 
@@ -252,12 +253,12 @@ public class MemoryGame extends Activity {
             }
         };
 
-        timer.schedule(showModifiedTask, 7500);
+        timer.schedule(showModifiedTask, 10000);
     }
 
     private void loadCards() {
         try {
-            int size = SQUARE_SIZE * SQUARE_SIZE;
+            int size = ROWS*COLS;
             ArrayList<Integer> list = new ArrayList<Integer>();
 
             for (int i = 0; i < TOTAL_NR_SHAPES; i++) {
@@ -293,7 +294,7 @@ public class MemoryGame extends Activity {
         TableRow row = new TableRow(context);
         row.setHorizontalGravity(Gravity.CENTER);
 
-        for (int x = 0; x < 3; x++) {
+        for (int x = 0; x < COLS; x++) {
             row.addView(createImageButton(x, y));
         }
         return row;

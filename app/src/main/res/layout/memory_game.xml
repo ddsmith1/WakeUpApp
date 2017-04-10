@@ -7,7 +7,7 @@
     </TableRow>
     <Space  android:layout_marginTop="20dp"/>
     <TableRow android:id="@+id/TableRow03" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center">
-        <ImageView android:adjustViewBounds="true" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/back" android:layout_gravity="center"></ImageView>
+        <ImageView android:adjustViewBounds="true" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@mipmap/back_image" android:layout_gravity="center"></ImageView>
     </TableRow>
     <LinearLayout android:layout_gravity="center_horizontal">
     <TextView android:paddingTop="20dp" android:paddingBottom="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv2" android:paddingLeft="10sp" android:layout_weight="1"

@@ -10,7 +10,7 @@
         android:layout_marginTop="10dp">
         <LinearLayout android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp" android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center">
-            <ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/back" android:layout_gravity="center"></ImageView></LinearLayout>
+            <ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@mipmap/back_image" android:layout_gravity="center"></ImageView></LinearLayout>
     </TableRow>
 
     <Button

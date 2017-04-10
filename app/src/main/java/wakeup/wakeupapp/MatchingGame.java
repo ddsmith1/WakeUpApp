@@ -60,7 +60,7 @@ public class MatchingGame extends Activity {
         loadImages();
         setContentView(R.layout.matching_game);
 
-        backImage = getDrawable(R.drawable.back);
+        backImage = getDrawable(R.mipmap.back_image);
 
         buttonListener = new ButtonListener();
         mainTable = (TableLayout) findViewById(R.id.TableLayout03); //wtf is TableLayout03
