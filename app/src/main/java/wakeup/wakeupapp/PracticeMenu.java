@@ -11,7 +11,6 @@ import android.widget.ImageView;
 
 public class PracticeMenu extends AppCompatActivity {
 
-    private ImageButton SampleGame;
     private ImageButton MatchingGame;
     private ImageButton ColorGame;
     private ImageButton DistractionGame;
@@ -26,7 +25,6 @@ public class PracticeMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practice_menu);
-        SampleGame = (ImageButton) findViewById(R.id.sampleGame);
         MatchingGame = (ImageButton) findViewById(R.id.matchingGame);
         ColorGame = (ImageButton) findViewById(R.id.colorGame);
         DistractionGame = (ImageButton) findViewById(R.id.distractionGame);
@@ -37,14 +35,6 @@ public class PracticeMenu extends AppCompatActivity {
         PatternMemoryGame = (ImageButton) findViewById(R.id.patternMemoryGame);
         ReactionGame = (ImageButton) findViewById(R.id.reactionGame);
 
-
-        SampleGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PracticeMenu.this, SampleGame.class);
-                startActivity(intent);
-            }
-        });
 
         MatchingGame.setOnClickListener(new View.OnClickListener() {
             @Override
