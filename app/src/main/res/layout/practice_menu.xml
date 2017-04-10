@@ -112,7 +112,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Pattern Memory Game"
+                    android:text="Recreate"
                     android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
@@ -155,7 +155,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Colors"
+                    android:text="Color"
                     android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
@@ -174,7 +174,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Matching"
+                    android:text="Match"
                     android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
