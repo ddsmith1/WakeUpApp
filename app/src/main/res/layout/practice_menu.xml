@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Sample"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Sample"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -64,7 +64,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/distract_icon"
+                    android:background="@drawable/react_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
                 <TextView
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Reaction"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
         </TableRow>
@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Distract"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -104,7 +104,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/memory_icon"
+                    android:background="@drawable/square_pattern_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
 
@@ -112,8 +112,8 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Pattern Memory Game"
-                    android:textSize="14sp"
+                    android:text="Recreate"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="Sample"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@color/textDark" />
             </LinearLayout>
         </TableRow>
@@ -155,8 +155,8 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Colors"
-                    android:textSize="14sp"
+                    android:text="Color"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -174,8 +174,8 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Matching"
-                    android:textSize="14sp"
+                    android:text="Match"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -193,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Sort"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
         </TableRow>
@@ -217,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Math"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -235,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Memory"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
@@ -253,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Pattern"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
         </TableRow>

@@ -40,8 +40,8 @@ public class PatternMemoryGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pattern_memory_game);
 
-        blueSquare = getDrawable(R.drawable.bluesquare);
-        redSquare = getDrawable(R.drawable.redsquare);
+        blueSquare = getDrawable(R.mipmap.blue_rect);
+        redSquare = getDrawable(R.mipmap.red_rect);
 
         init();
         gameSetup();

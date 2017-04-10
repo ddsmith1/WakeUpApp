@@ -6,6 +6,7 @@ package wakeup.wakeupapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.shapes.Shape;
@@ -22,6 +23,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
@@ -29,18 +31,20 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SortingGame extends Activity {
-    private final int NR_ITEMS = 12;
+    private final int NR_IMAGES = 12;
+    private final int NR_ITEMS_TO_SORT = 20;
 
-    private Stack<SortingItem> items;
     private List<SortingItem> images;
     private Context context;
 
     private ImageView imageSpot;
     private Button endGame;
 
-    private ArrayList<Button> buttons= new ArrayList<Button>();
+    private ArrayList<Button> buttons;
 
-    int itemsLeft = 0;
+    int itemsLeft = NR_ITEMS_TO_SORT;
+    int nrItemsSinceSwitch = 0;
+    String currentSortType = "shape";
 
     private class SortingItem
     {
@@ -57,15 +61,11 @@ public class SortingGame extends Activity {
 
     public void checkSorting(View view) {
         String text = ((Button) view).getText().toString();
-        if (items.peek().color.equals(text.toLowerCase()) || items.peek().shape.equals(text.toLowerCase())) { //maybe also shape?
-            items.pop();
+        if (images.get(0).color.equals(text.toLowerCase()) || images.get(0).shape.equals(text.toLowerCase())) {
+            images.remove(0);
             itemsLeft--;
 
-            for (Button btn: buttons) {
-                btn.setEnabled(true);
-            }
-
-            if (items.empty()) {
+            if (images.size() == 0) {
                 for (Button btn: buttons) {
                     btn.setVisibility(View.GONE);
                 }
@@ -78,17 +78,75 @@ public class SortingGame extends Activity {
                     }
                 });
             } else {
-                imageSpot.setImageDrawable(items.peek().drawable);
+                setNextDrawable();
+            }
+
+            for (Button btn: buttons) {
+                btn.setEnabled(true);
             }
         } else {
-            ((Button) view).setEnabled(false);
-//            if (items.size() < 10) {
-//                items.push(images.get(new Random().nextInt(images.size())));
-//                itemsLeft++;
-//            }
+            view.setEnabled(false);
         }
 
         ((TextView) findViewById(R.id.tv1)).setText("Items left: " + itemsLeft);
+    }
+
+    private void setNextDrawable() {
+        imageSpot.setImageDrawable(images.get(0).drawable);
+
+        buttons = new ArrayList<Button>();
+        Boolean nextIsShapeSort;
+
+        if (nrItemsSinceSwitch >= 3) {
+            if (currentSortType.equals("shape")) {
+                nextIsShapeSort = false;
+            }
+            else {
+                nextIsShapeSort = true;
+            }
+        }
+        else {
+            nextIsShapeSort = new Random().nextBoolean();
+        }
+
+        if (nextIsShapeSort) {
+            if (!currentSortType.equals("shape")) {
+                buttons.add((Button) findViewById(R.id.redSort));
+                buttons.add((Button) findViewById(R.id.yellowSort));
+                buttons.add((Button) findViewById(R.id.greenSort));
+                buttons.add((Button) findViewById(R.id.blueSort));
+
+                currentSortType = "shape";
+            }
+            else {
+                nrItemsSinceSwitch++;
+            }
+
+            findViewById(R.id.shapeButtons1).setVisibility(View.GONE);
+            findViewById(R.id.shapeButtons2).setVisibility(View.GONE);
+
+            findViewById(R.id.colorButtons1).setVisibility(View.VISIBLE);
+            findViewById(R.id.colorButtons2).setVisibility(View.VISIBLE);
+        }
+        else {
+            if (!currentSortType.equals("color")) {
+                buttons.add((Button) findViewById(R.id.triangleSort));
+                buttons.add((Button) findViewById(R.id.circleSort));
+                buttons.add((Button) findViewById(R.id.squareSort));
+
+                currentSortType = "color";
+            }
+            else {
+                nrItemsSinceSwitch++;
+            }
+
+            findViewById(R.id.shapeButtons1).setVisibility(View.VISIBLE);
+            findViewById(R.id.shapeButtons2).setVisibility(View.VISIBLE);
+
+            findViewById(R.id.colorButtons1).setVisibility(View.GONE);
+            findViewById(R.id.colorButtons2).setVisibility(View.GONE);
+        }
+
     }
 
     @Override
@@ -108,40 +166,14 @@ public class SortingGame extends Activity {
     }
 
     public void startGame() {
-        items = new Stack<SortingItem>();
         TableRow tr = ((TableRow) findViewById(R.id.TableRow03));
         tr.removeAllViews();
         imageSpot = new ImageView(context);
         tr.addView(imageSpot);
 
         loadItems();
-        imageSpot.setImageDrawable(items.peek().drawable);
+        setNextDrawable();
         ((TextView) findViewById(R.id.tv1)).setText("Items left: " + itemsLeft);
-
-
-        if (new Random().nextInt(2) == 0) {
-            buttons.add((Button) findViewById(R.id.redSort));
-            buttons.add((Button) findViewById(R.id.yellowSort));
-            buttons.add((Button) findViewById(R.id.redSort));
-            buttons.add((Button) findViewById(R.id.blueSort));
-
-            findViewById(R.id.shapeButtons1).setVisibility(View.GONE);
-            findViewById(R.id.shapeButtons2).setVisibility(View.GONE);
-
-            findViewById(R.id.colorButtons1).setVisibility(View.VISIBLE);
-            findViewById(R.id.colorButtons2).setVisibility(View.VISIBLE);
-        }
-        else {
-            buttons.add((Button) findViewById(R.id.triangleSort));
-            buttons.add((Button) findViewById(R.id.circleSort));
-            buttons.add((Button) findViewById(R.id.squareSort));
-
-            findViewById(R.id.shapeButtons1).setVisibility(View.VISIBLE);
-            findViewById(R.id.shapeButtons2).setVisibility(View.VISIBLE);
-
-            findViewById(R.id.colorButtons1).setVisibility(View.GONE);
-            findViewById(R.id.colorButtons2).setVisibility(View.GONE);
-        }
     }
 
     private void loadImages() {
@@ -203,26 +235,11 @@ public class SortingGame extends Activity {
 
     private void loadItems() {
         try {
-            int size = NR_ITEMS;
-            ArrayList<Integer> list = new ArrayList<Integer>();
+            Collections.shuffle(images);
 
-            for (int i = 0; i < size; i++) {
-                list.add(new Integer(i)); //creates list of 0-7
-            }
-
-            Random rand = new Random();
-
-            for (int i = size - 1; i >= 0; i--) {
-                int temp = 0;
-
-                if (i > 0) {
-                    temp = rand.nextInt(i+1); //gets random integer from [0,i)
-                }
-
-                temp = list.remove(temp).intValue(); //removes and gets value of removed item in list
-
-                items.push(images.get(temp));
-                itemsLeft++;
+            for (int i=NR_IMAGES; i<NR_ITEMS_TO_SORT; i++) {
+                SortingItem itemToAddAgain = images.get(new Random().nextInt(NR_IMAGES));
+                images.add(itemToAddAgain);
             }
         } catch (Exception e) {
             Log.e("loadItems()", e + "");

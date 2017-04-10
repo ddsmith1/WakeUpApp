@@ -5,20 +5,22 @@
     <TableRow android:id="@+id/TableRow05" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="20dp">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv1" android:paddingLeft="10sp" android:layout_weight="1"></TextView>
     </TableRow>
-    <Space  android:layout_marginTop="30dp"/>
+    <Space  android:layout_marginTop="20dp"/>
     <TableRow android:id="@+id/TableRow03" android:layout_width="0dp" android:layout_height="match_parent" android:gravity="center">
-        <ImageView android:adjustViewBounds="true" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/back" android:layout_gravity="center"></ImageView>
+        <ImageView android:adjustViewBounds="true" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@mipmap/back_image" android:layout_gravity="center"></ImageView>
     </TableRow>
     <LinearLayout android:layout_gravity="center_horizontal">
     <TextView android:paddingTop="20dp" android:paddingBottom="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv2" android:paddingLeft="10sp" android:layout_weight="1"
-        android:layout_marginTop="15dp"
-        android:textStyle="normal|bold"></TextView>
+        android:layout_marginTop="45dp"
+        android:textSize="16sp"
+        android:textColor="@color/textDark"
+        android:gravity="center_horizontal"></TextView>
     </LinearLayout>
-    <LinearLayout android:layout_marginLeft="20dp" android:layout_marginTop="20dp"
+    <LinearLayout android:layout_marginLeft="20dp" android:layout_marginTop="5dp"
         android:layout_marginRight="20dp" android:id="@+id/LinearLayout02" android:layout_width="205dp" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="0dp">
         <ImageButton
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/answer1"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -31,10 +33,10 @@
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content" />
     </LinearLayout>
-    <LinearLayout android:layout_marginLeft="20dp" android:layout_marginTop="30dp"
+    <LinearLayout android:layout_marginLeft="20dp" android:layout_marginTop="20dp"
         android:layout_marginRight="20dp" android:id="@+id/LinearLayout03" android:layout_width="205dp" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center">
         <ImageButton
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/answer3"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
