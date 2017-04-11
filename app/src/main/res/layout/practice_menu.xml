@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:text="Categories"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:text="Color"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:text="Distract"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
         </TableRow>
         <TableRow android:gravity="center_horizontal"
@@ -98,14 +98,14 @@
                     android:layout_width="wrap_content"
                     android:text="Match"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
                     android:id="@+id/mathGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/operators_icon"
+                    android:background="@drawable/math_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp"
                     android:layout_gravity="center_horizontal"
@@ -116,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:text="Math"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:text="Memory"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
         </TableRow>
 
@@ -158,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:text="Operators"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -176,7 +176,7 @@
                     android:layout_width="wrap_content"
                     android:text="Pattern"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -193,7 +193,7 @@
                     android:layout_width="wrap_content"
                     android:text="Reaction"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
         </TableRow>
 
@@ -216,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:text="Recreate"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -233,7 +233,7 @@
                 android:layout_width="wrap_content"
                 android:text="Reflex"
                 android:textSize="12sp"
-                android:textColor="@color/textDark" />
+                android:textColor="#444444" />
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
@@ -251,7 +251,7 @@
                     android:layout_width="wrap_content"
                     android:text="Sort"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444" />
             </LinearLayout>
         </TableRow>
     </TableLayout>
