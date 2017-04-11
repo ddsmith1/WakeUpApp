@@ -11,21 +11,24 @@
     tools:context="wakeup.wakeupapp.Help">
 
     <TableLayout
-        android:layout_width="match_parent"
-        android:stretchColumns="*"
+        android:layout_width="wrap_content"
+        android:stretchColumns="1"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:padding="5dp"
+        android:showDividers="beginning|middle">
 
-        <TableRow android:gravity="center_horizontal"
+        <TableRow
             android:layout_marginBottom="30dp"
             android:layout_marginTop="5dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-9dp">
+            <LinearLayout android:orientation="horizontal" android:layout_marginLeft="20dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/sampleGame3"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -34,15 +37,17 @@
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Categories"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="left" android:layout_marginLeft="40dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/colorGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -51,16 +56,25 @@
                     android:minWidth="45dp"
                     android:layout_gravity="center_horizontal"
                     android:backgroundTint="@color/textDark" />
+
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Color"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-9dp">
+            <LinearLayout android:orientation="horizontal" android:layout_marginLeft="20dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/distractionGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -69,20 +83,18 @@
                     android:minWidth="45dp"
                     android:layout_gravity="center_horizontal" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Distract"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-        </TableRow>
-        <TableRow android:gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="left" android:layout_marginLeft="40dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/matchingGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -93,33 +105,44 @@
                     android:backgroundTint="@color/textDark" />
 
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Match"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+        </TableRow>
+
+        <TableRow
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-9dp">
+            <LinearLayout android:orientation="horizontal" android:layout_marginLeft="20dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/mathGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/operators_icon"
+                    android:background="@drawable/math_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp"
                     android:layout_gravity="center_horizontal"
                     android:backgroundTint="@color/textDark" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Math"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="left" android:layout_marginLeft="40dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/memoryGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -129,21 +152,24 @@
                     android:minWidth="45dp"
                     android:backgroundTint="@color/textDark" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Memory"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
         </TableRow>
 
-        <TableRow android:gravity="center_horizontal"
+        <TableRow
             android:layout_marginBottom="30dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-9dp">
+            <LinearLayout android:orientation="horizontal" android:layout_marginLeft="20dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/sampleGame2"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -153,15 +179,18 @@
                     android:minWidth="45dp" />
 
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Operators"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="left" android:layout_marginLeft="40dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/patternGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -171,15 +200,24 @@
                     android:minWidth="45dp"
                     android:backgroundTint="@color/textDark" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Pattern"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+        </TableRow>
+
+        <TableRow
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-9dp">
+            <LinearLayout android:orientation="horizontal" android:layout_marginLeft="20dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/reactionGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -188,21 +226,17 @@
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Reaction"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-        </TableRow>
-
-        <TableRow android:gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="left" android:layout_marginLeft="40dp" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/patternMemoryGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
@@ -211,15 +245,23 @@
                     android:minHeight="45dp"
                     android:minWidth="45dp" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Recreate"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="#444444"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+        </TableRow>
+
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="center_horizontal" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/reflex_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -228,15 +270,16 @@
                     android:minWidth="45dp"
                     android:layout_gravity="center_horizontal" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Reflex"
                     android:textSize="12sp"
                     android:textColor="@color/textDark" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
+            <LinearLayout android:orientation="horizontal" android:layout_gravity="center_horizontal" android:onClick="displayHelpInfo">
                 <ImageButton
+                    android:onClick="displayHelpInfo"
                     android:id="@+id/sortingGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -246,7 +289,7 @@
                     android:layout_gravity="center_horizontal"
                     android:backgroundTint="@color/textDark" />
                 <TextView
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Sort"
