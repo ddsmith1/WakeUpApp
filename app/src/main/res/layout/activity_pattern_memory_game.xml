@@ -10,110 +10,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wakeup.wakeupapp.PatternMemoryGame">
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"/>
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignTop="@+id/imageButton8"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/imageButton11" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignTop="@+id/imageButton5"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignTop="@+id/imageButton6"
-        android:layout_alignStart="@+id/imageButton8" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_below="@+id/imageButton3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="17dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_below="@+id/imageButton6"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignTop="@+id/imageButton9"
-        android:layout_centerHorizontal="true" />
-
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_below="@+id/imageButton9"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignTop="@+id/imageButton12"
-        android:layout_alignStart="@+id/imageButton8" />
-
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="80dip"
-        android:layout_height="80dip"
-        android:background="@mipmap/blue_rect"
-        android:layout_alignTop="@+id/imageButton11"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:id="@+id/checkButton"
         android:text="Check Answer"
         android:layout_width="120dip"
         android:layout_height="60dip"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/imageButton11" />
+        android:layout_alignParentBottom="true" />
 
     <Button
         android:id="@+id/advanceButton"
@@ -121,6 +23,104 @@
         android:layout_width="120dip"
         android:layout_height="60dip"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/imageButton11" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="33dp" />
+
+    <TableLayout
+        android:id="@+id/buttonsTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+        <TableRow>
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect"/>
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:background="@mipmap/blue_rect"/>
+
+            <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+        </TableRow>
+    <TableRow>
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:background="@mipmap/blue_rect" />
+
+        <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+    </TableRow>
+    <TableRow>
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect"/>
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:background="@mipmap/blue_rect" />
+
+        <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+    </TableRow>
+    <TableRow>
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:background="@mipmap/blue_rect" />
+
+    </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/endGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity Complete"
+        android:layout_marginTop="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

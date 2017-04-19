@@ -10,40 +10,65 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wakeup.wakeupapp.MathGame">
 
-    <Button
-        android:id="@+id/expression4"
+    <TextView
+        android:id="@+id/score"
+        android:text="BLANK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Blank"
-        android:layout_below="@+id/expression3"
-        android:layout_alignStart="@+id/expression3"
-        android:layout_marginTop="56dp" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp" />
 
+    <TextView
+        android:id="@+id/instructions"
+        android:text="Choose the expression that has the greatest value."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="59dp"
+        android:layout_alignParentEnd="true" />
+
+
+    <Button
+        android:id="@+id/endGame"
+        android:text="Activity Complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/endGame"
+        android:layout_centerHorizontal="true">
+<TableRow>
     <Button
         android:id="@+id/expression3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Blank"
-        android:layout_marginTop="51dp"
-        android:layout_below="@+id/expression2"
-        android:layout_alignStart="@+id/expression2" />
-
-    <Button
-        android:id="@+id/expression1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blank"
-        android:layout_marginTop="41dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:text="Blank" />
 
     <Button
         android:id="@+id/expression2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Blank"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/expression1"
-        android:layout_alignStart="@+id/expression1" />
+        android:layout_alignParentEnd="true" />
+</TableRow>
+    <TableRow>
+    <Button
+        android:id="@+id/expression4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blank" />
+
+    <Button
+        android:id="@+id/expression1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blank"/>
+    </TableRow>
+    </TableLayout>
 
 </RelativeLayout>

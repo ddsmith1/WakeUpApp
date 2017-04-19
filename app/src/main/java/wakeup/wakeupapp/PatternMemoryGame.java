@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
 
 import java.util.Random;
 
@@ -24,6 +25,9 @@ public class PatternMemoryGame extends AppCompatActivity {
     private View.OnClickListener checkListener;
     private View.OnClickListener advanceListener;
 
+    private Button endGame;
+    private TableLayout tableButtons;
+
     private int pattern[];
     private int userPattern[];
 
@@ -33,7 +37,7 @@ public class PatternMemoryGame extends AppCompatActivity {
 
     private final int PATTERN_SIZE = 12;
     private final int NUM_TO_MATCH = 5;
-    private final int SCORE_TO_REACH = 1;
+    private final int SCORE_TO_REACH = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,15 @@ public class PatternMemoryGame extends AppCompatActivity {
     }
 
     private void init() {
+        tableButtons = (TableLayout) findViewById(R.id.buttonsTable);
+        endGame = (Button) findViewById(R.id.endGame);
+        endGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        endGame.setVisibility(View.INVISIBLE);
         random = new Random();
         score = 0;
         initializePatterns();
@@ -245,11 +258,16 @@ public class PatternMemoryGame extends AppCompatActivity {
                     score++;
                 }
                 if(score >= SCORE_TO_REACH) {
-                    finish();
+                    tableButtons.setVisibility(INVISIBLE);
+                    checkButton.setVisibility(INVISIBLE);
+                    advanceButton.setVisibility(INVISIBLE);
+                    endGame.setVisibility(View.VISIBLE);
                 }
-                gameSetup();
-                advanceButton.setVisibility(View.VISIBLE);
-                checkButton.setVisibility(INVISIBLE);
+                if(score < SCORE_TO_REACH) {
+                    gameSetup();
+                    advanceButton.setVisibility(View.VISIBLE);
+                    checkButton.setVisibility(INVISIBLE);
+                }
             }
         };
 

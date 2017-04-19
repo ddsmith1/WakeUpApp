@@ -20,6 +20,9 @@ public class PracticeMenu extends AppCompatActivity {
     private ImageButton MathGame;
     private ImageButton PatternMemoryGame;
     private ImageButton ReactionGame;
+    private ImageButton EqualityGame;
+    private ImageButton CategoriesGame;
+    private ImageButton ReflexGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,9 @@ public class PracticeMenu extends AppCompatActivity {
         MathGame = (ImageButton) findViewById(R.id.mathGame);
         PatternMemoryGame = (ImageButton) findViewById(R.id.patternMemoryGame);
         ReactionGame = (ImageButton) findViewById(R.id.reactionGame);
+        EqualityGame = (ImageButton) findViewById(R.id.equalityGame);
+        CategoriesGame = (ImageButton) findViewById(R.id.categoriesGame);
+        ReflexGame = (ImageButton) findViewById(R.id.reflexGame);
 
 
         MatchingGame.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +106,27 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, ReactionGame.class);
+                startActivity(intent);
+            }
+        });
+        EqualityGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PracticeMenu.this, EqualityGame.class);
+                startActivity(intent);
+            }
+        });
+        CategoriesGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PracticeMenu.this, CategoriesGame.class);
+                startActivity(intent);
+            }
+        });
+        ReflexGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PracticeMenu.this, ReactChangeGame.class);
                 startActivity(intent);
             }
         });

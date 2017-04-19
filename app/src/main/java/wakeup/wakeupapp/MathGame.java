@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -14,6 +15,7 @@ public class MathGame extends AppCompatActivity {
     private Button expression2;
     private Button expression3;
     private Button expression4;
+    private Button endGame;
 
     private View.OnClickListener exp1;
     private View.OnClickListener exp2;
@@ -21,11 +23,13 @@ public class MathGame extends AppCompatActivity {
     private View.OnClickListener exp4;
 
     private final int RANGE = 3;
-    private final int SCORE_NEEDED = 3;
 
     private int median;
     private int score;
     private Random random;
+
+    private TextView scoreDisplay;
+    private TextView instructions;
 
     private int expressionFlag;
     private int expAnswers[];
@@ -52,13 +56,26 @@ public class MathGame extends AppCompatActivity {
     }
 
     public void initialize() {
-        score = 0;
+        endGame = (Button) findViewById(R.id.endGame);
+
+        endGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        endGame.setVisibility(View.INVISIBLE);
+        score = 15;
         median = 0;
         expressionFlag = 0;
         random = new Random();
         initAnswers();
         initListeners();
         attachListeners();
+        scoreDisplay = (TextView) findViewById(R.id.score);
+        scoreDisplay.setText("Rounds left: " + Integer.toString(score));
+        instructions = (TextView) findViewById(R.id.instructions);
+
     }
 
     public void initAnswers() {
@@ -117,19 +134,18 @@ public class MathGame extends AppCompatActivity {
 
     public void updateScore(boolean value) {
         if(value) {
-            score++;
+            score--;
         } else {
-            if(score != 0) {
-                score--;
+            if(score != 15) {
+                score++;
             }
         }
+        scoreDisplay.setText("Rounds left: " + Integer.toString(score));
     }
 
     public void gameLoop() {
         generateMedian();
-        Log.i("median", "generated median");
         updateButtons();
-        Log.i("update", "updated buttons");
     }
 
     public boolean checkAnswer(int userChoice) {
@@ -185,7 +201,7 @@ public class MathGame extends AppCompatActivity {
         int operand1 = 0;
         int operand2 = 0;
         int difference = 0;
-        while(!(difference >= median - 5 && difference <= median + RANGE )) {
+        while(!(difference >= median - RANGE && difference <= median + RANGE && difference != 0)) {
             operand1 = random.nextInt(median * 2) + 1;
             operand2 = random.nextInt(median * 2) + 1;
             difference = operand1 - operand2;
@@ -236,8 +252,14 @@ public class MathGame extends AppCompatActivity {
     }
 
     public void checkScore() {
-        if(score >= SCORE_NEEDED) {
-            finish();
+        if(score <= 0) {
+            expression1.setVisibility(View.INVISIBLE);
+            expression2.setVisibility(View.INVISIBLE);
+            expression3.setVisibility(View.INVISIBLE);
+            expression4.setVisibility(View.INVISIBLE);
+            scoreDisplay.setVisibility(View.INVISIBLE);
+            instructions.setVisibility(View.INVISIBLE);
+            endGame.setVisibility(View.VISIBLE);
         }
     }
 

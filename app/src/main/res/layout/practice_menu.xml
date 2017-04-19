@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
-                    android:id="@+id/sampleGame3"
+                    android:id="@+id/categoriesGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
             android:layout_height="match_parent">
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
-                    android:id="@+id/sampleGame2"
+                    android:id="@+id/equalityGame"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -220,10 +220,10 @@
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_gravity="center_horizontal">
                 <ImageButton
-                android:id="@+id/reflex_icon"
+                android:id="@+id/reflexGame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/distract_icon"
+                android:background="@drawable/reflex_icon"
                 android:minHeight="45dp"
                 android:minWidth="45dp"
                 android:layout_gravity="center_horizontal" />

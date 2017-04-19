@@ -23,6 +23,8 @@ public class ReactionGame extends AppCompatActivity {
     private TextView instructions;
     private ImageButton image;
 
+    private Button endGame;
+
     private Random random;
     private int score;
 
@@ -38,6 +40,14 @@ public class ReactionGame extends AppCompatActivity {
     }
 
     public void init() {
+        endGame = (Button) findViewById(R.id.endGame);
+        endGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        endGame.setVisibility(View.INVISIBLE);
         instructions = (TextView) findViewById(R.id.textView);
         instructions.setText("Press yes if the current shape matches the previous shape, press no if it doesn't match, and do so as quickly as possible.");
         random = new Random();
@@ -137,7 +147,11 @@ public class ReactionGame extends AppCompatActivity {
             }
         }
         if(score >= SCORE_TO_REACH) {
-            finish();
+            endGame.setVisibility(View.VISIBLE);
+            instructions.setVisibility(View.INVISIBLE);
+            image.setVisibility(View.INVISIBLE);
+            yes.setVisibility(View.INVISIBLE);
+            no.setVisibility(View.INVISIBLE);
         }
     }
 
