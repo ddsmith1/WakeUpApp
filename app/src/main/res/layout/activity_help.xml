@@ -21,7 +21,7 @@
         android:showDividers="beginning|middle">
 
         <TableRow
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="5dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -68,7 +68,7 @@
             </LinearLayout>
         </TableRow>
         <TableRow
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="-9dp">
@@ -116,7 +116,7 @@
         </TableRow>
 
         <TableRow
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="-9dp">
@@ -163,7 +163,7 @@
         </TableRow>
 
         <TableRow
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="-9dp">
@@ -211,7 +211,7 @@
         </TableRow>
 
         <TableRow
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="-9dp">
@@ -256,16 +256,18 @@
         </TableRow>
 
         <TableRow android:gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent">
-            <LinearLayout android:orientation="horizontal" android:layout_gravity="center_horizontal" android:onClick="displayHelpInfo">
+            <LinearLayout android:orientation="horizontal"
+                android:onClick="displayHelpInfo"
+                android:layout_marginLeft="37dp">
                 <ImageButton
                     android:onClick="displayHelpInfo"
                     android:id="@+id/reflex_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/distract_icon"
+                    android:background="@drawable/reflex_icon"
                     android:minHeight="45dp"
                     android:minWidth="45dp"
                     android:layout_gravity="center_horizontal" />
@@ -275,9 +277,13 @@
                     android:layout_width="wrap_content"
                     android:text="Reflex"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="@color/textDark"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:layout_gravity="center_horizontal" android:onClick="displayHelpInfo">
+            <LinearLayout android:orientation="horizontal"
+                android:onClick="displayHelpInfo"
+                android:layout_marginLeft="55dp"
+                android:layout_gravity="left">
                 <ImageButton
                     android:onClick="displayHelpInfo"
                     android:id="@+id/sortingGame"
@@ -294,7 +300,8 @@
                     android:layout_width="wrap_content"
                     android:text="Sort"
                     android:textSize="12sp"
-                    android:textColor="@color/textDark" />
+                    android:textColor="@color/textDark"
+                    android:layout_marginLeft="5dp" />
             </LinearLayout>
         </TableRow>
     </TableLayout>
