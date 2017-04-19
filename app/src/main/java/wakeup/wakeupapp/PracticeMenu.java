@@ -1,13 +1,10 @@
 package wakeup.wakeupapp;
 
 import android.content.Intent;
-import android.media.MediaCodec;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class PracticeMenu extends AppCompatActivity {
 
@@ -20,7 +17,7 @@ public class PracticeMenu extends AppCompatActivity {
     private ImageButton MathGame;
     private ImageButton PatternMemoryGame;
     private ImageButton ReactionGame;
-    private ImageButton EqualityGame;
+    private ImageButton OperatorsGame;
     private ImageButton CategoriesGame;
     private ImageButton ReflexGame;
 
@@ -37,7 +34,7 @@ public class PracticeMenu extends AppCompatActivity {
         MathGame = (ImageButton) findViewById(R.id.mathGame);
         PatternMemoryGame = (ImageButton) findViewById(R.id.patternMemoryGame);
         ReactionGame = (ImageButton) findViewById(R.id.reactionGame);
-        EqualityGame = (ImageButton) findViewById(R.id.equalityGame);
+        OperatorsGame = (ImageButton) findViewById(R.id.operatorsGame);
         CategoriesGame = (ImageButton) findViewById(R.id.categoriesGame);
         ReflexGame = (ImageButton) findViewById(R.id.reflexGame);
 
@@ -109,10 +106,10 @@ public class PracticeMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        EqualityGame.setOnClickListener(new View.OnClickListener() {
+        OperatorsGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PracticeMenu.this, EqualityGame.class);
+                Intent intent = new Intent(PracticeMenu.this, OperatorsGame.class);
                 startActivity(intent);
             }
         });
@@ -126,7 +123,7 @@ public class PracticeMenu extends AppCompatActivity {
         ReflexGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PracticeMenu.this, ReactChangeGame.class);
+                Intent intent = new Intent(PracticeMenu.this, wakeup.wakeupapp.ReflexGame.class);
                 startActivity(intent);
             }
         });

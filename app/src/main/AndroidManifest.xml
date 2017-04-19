@@ -33,9 +33,9 @@
         <activity android:name=".SortingGame" />
         <activity android:name=".PatternMemoryGame" />
         <activity android:name=".ReactionGame" />
-        <activity android:name=".EqualityGame" />
+        <activity android:name=".OperatorsGame" />
         <activity android:name=".CategoriesGame" />
-        <activity android:name=".ReactChangeGame"></activity>
+        <activity android:name=".ReflexGame"></activity>
     </application>
 
 </manifest>

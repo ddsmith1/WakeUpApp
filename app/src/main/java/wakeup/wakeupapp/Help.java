@@ -53,7 +53,7 @@ public class Help extends AppCompatActivity {
         namesToDescriptions.put("React", "One by one, various shapes will be displayed. Quickly, indicate whether the shape "
                 + "is the same as the previous one or different.\n" +
                 "\n" + "This game focuses on reaction speed and visual discrimination.");
-        namesToDescriptions.put("Reflex", "A grid of shapes will be displayed. The items will change, and you have to tap them"
+        namesToDescriptions.put("ReflexGame", "A grid of shapes will be displayed. The items will change, and you have to tap them"
                 + " quickly when they do, before the next item changes. Be quick, but don’t tap items that didn’t just change.\n" +
                 "\n" + "This game focuses on reaction speed.");
         namesToDescriptions.put("Recreate", "A grid of squares will be displayed, some red and some blue."

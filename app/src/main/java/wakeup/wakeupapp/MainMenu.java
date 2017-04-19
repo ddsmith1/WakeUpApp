@@ -16,7 +16,7 @@ public class MainMenu extends AppCompatActivity {
     private ImageButton startActivity;
     private ImageButton help;
     final int NUM_CHOICES = 3;
-    final int NUM_GAMES = 9;
+    final int NUM_GAMES = 12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +109,18 @@ public class MainMenu extends AppCompatActivity {
                             break;
                         case 9:
                             intent = new Intent(MainMenu.this, ReactionGame.class);
+                            startActivity(intent);
+                            break;
+                        case 10:
+                            intent = new Intent(MainMenu.this, ReflexGame.class);
+                            startActivity(intent);
+                            break;
+                        case 11:
+                            intent = new Intent(MainMenu.this, CategoriesGame.class);
+                            startActivity(intent);
+                            break;
+                        case 12:
+                            intent = new Intent(MainMenu.this, OperatorsGame.class);
                             startActivity(intent);
                             break;
                     }
