@@ -96,9 +96,6 @@ public class ColorGame extends Activity {
             }
         } else {
             button.setEnabled(false);
-//                if (colorsLeft < 15) {
-//                    colorsLeft++;
-//                }
         }
 
         ((TextView) findViewById(R.id.tv1)).setText("Colors left: " + colorsLeft);

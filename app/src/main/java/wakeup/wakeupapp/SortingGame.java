@@ -67,6 +67,10 @@ public class SortingGame extends Activity {
             images.remove(0);
             itemsLeft--;
 
+            for (Button btn: buttons) {
+                btn.setEnabled(true);
+            }
+
             if (images.size() == 0) {
                 for (Button btn: buttons) {
                     btn.setVisibility(View.GONE);
@@ -81,10 +85,6 @@ public class SortingGame extends Activity {
                 });
             } else {
                 setNextDrawable();
-            }
-
-            for (Button btn: buttons) {
-                btn.setEnabled(true);
             }
         } else {
             view.setEnabled(false);

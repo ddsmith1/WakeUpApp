@@ -6,9 +6,11 @@ package wakeup.wakeupapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,8 @@ import java.util.Set;
 import java.util.Stack;
 
 public class PatternGame extends Activity {
+    private final int NR_PATTERNS = 10;
+
     private Context context;
 
     private TextView patternSpot;
@@ -76,7 +80,6 @@ public class PatternGame extends Activity {
 
             fakeAnswers.add(currentSolution + factor);
         }
-        //TODO: maybe add division
 
         for (int i=0; i<3; i++) { //just for a nice answer pool
             int num1 = currentSolution + rand.nextInt(10) + 1;
@@ -120,6 +123,12 @@ public class PatternGame extends Activity {
             answer3.setEnabled(true);
             answer4.setEnabled(true);
 
+            answer1.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+            answer2.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+            answer3.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+            answer4.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorAccent)));
+
+
             if (patternsLeft == 0) {
                 endGame.setVisibility(View.VISIBLE);
                 answer1.setVisibility(View.INVISIBLE);
@@ -138,7 +147,7 @@ public class PatternGame extends Activity {
             }
         } else {
             button.setEnabled(false);
-//                patternsLeft++;//maybe later?
+            button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dividerColor)));
         }
 
         ((TextView) findViewById(R.id.tv1)).setText("Patterns left: " + patternsLeft);
@@ -175,7 +184,7 @@ public class PatternGame extends Activity {
         endGame = (Button) findViewById(R.id.endbutton);
         endGame.setVisibility(View.INVISIBLE);
 
-        patternsLeft = 5;
+        patternsLeft = NR_PATTERNS;
         setNewPattern();
     }
 
