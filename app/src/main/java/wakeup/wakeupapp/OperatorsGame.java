@@ -39,6 +39,8 @@ public class OperatorsGame extends AppCompatActivity {
 
     private Random random;
 
+    private static int activityFlag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -206,6 +208,21 @@ public class OperatorsGame extends AppCompatActivity {
                     endGame.setVisibility(View.VISIBLE);
                 }
                 break;
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 }

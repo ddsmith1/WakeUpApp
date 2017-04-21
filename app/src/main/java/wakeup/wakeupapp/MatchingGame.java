@@ -49,6 +49,8 @@ public class MatchingGame extends Activity {
     private UpdateCardsHandler handler;
     private Button endGame;
 
+    private static int activityFlag;
+
     int turns;
     int cardsLeft = 0;
 
@@ -253,6 +255,21 @@ public class MatchingGame extends Activity {
                     }
                 });
             }
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 

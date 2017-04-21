@@ -34,6 +34,8 @@ public class MathGame extends AppCompatActivity {
     private int expressionFlag;
     private int expAnswers[];
 
+    private static int activityFlag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -266,6 +268,21 @@ public class MathGame extends AppCompatActivity {
     public void clearAnswers() {
         for(int i = 0; i < 4; i++) {
             expAnswers[i] = 0;
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 

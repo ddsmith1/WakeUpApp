@@ -42,6 +42,8 @@ public class ColorGame extends Activity {
     int [] colors = new int[4];
     String [] texts = {"RED", "YELLOW", "GREEN", "BLUE"};
 
+    private static int activityFlag;
+
     private void setNewColor() {
         Random rand = new Random();
 
@@ -165,6 +167,21 @@ public class ColorGame extends Activity {
 
         Timer t = new Timer(false);
         t.schedule(tt, 2000);
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
+        }
     }
 
 }

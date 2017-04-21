@@ -43,6 +43,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, MatchingGame.class);
+                wakeup.wakeupapp.MatchingGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -51,6 +52,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, MemoryGame.class);
+                wakeup.wakeupapp.MemoryGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -59,6 +61,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, ColorGame.class);
+                wakeup.wakeupapp.ColorGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -67,6 +70,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, DistractionGame.class);
+                wakeup.wakeupapp.DistractionGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -75,6 +79,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, MathGame.class);
+                wakeup.wakeupapp.MathGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -82,6 +87,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, PatternGame.class);
+                wakeup.wakeupapp.PatternGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -89,6 +95,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, SortingGame.class);
+                wakeup.wakeupapp.SortingGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -96,6 +103,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, PatternMemoryGame.class);
+                wakeup.wakeupapp.PatternMemoryGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -103,6 +111,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, ReactionGame.class);
+                wakeup.wakeupapp.ReactionGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -110,6 +119,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, OperatorsGame.class);
+                wakeup.wakeupapp.OperatorsGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -117,6 +127,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, CategoriesGame.class);
+                wakeup.wakeupapp.CategoriesGame.clearActivityFlag();
                 startActivity(intent);
             }
         });
@@ -124,6 +135,7 @@ public class PracticeMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PracticeMenu.this, wakeup.wakeupapp.ReflexGame.class);
+                wakeup.wakeupapp.ReflexGame.clearActivityFlag();
                 startActivity(intent);
             }
         });

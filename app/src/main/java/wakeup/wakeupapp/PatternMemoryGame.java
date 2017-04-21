@@ -39,6 +39,8 @@ public class PatternMemoryGame extends AppCompatActivity {
     private final int NUM_TO_MATCH = 5;
     private final int SCORE_TO_REACH = 5;
 
+    private static int activityFlag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -341,6 +343,21 @@ public class PatternMemoryGame extends AppCompatActivity {
     private void clearButtons() {
         for(int i = 0; i < PATTERN_SIZE; i++) {
             imageButtons[i].setBackground(blueSquare);
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 

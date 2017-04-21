@@ -77,50 +77,62 @@ public class MainMenu extends AppCompatActivity {
                     switch (choices[i]) { //switch for different games, currently only one
                         case 1:
                             intent = new Intent(MainMenu.this, ColorGame.class);
+                            ColorGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 2:
                             intent = new Intent(MainMenu.this, DistractionGame.class);
+                            DistractionGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 3:
                             intent = new Intent(MainMenu.this, MatchingGame.class);
+                            MatchingGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 4:
                             intent = new Intent(MainMenu.this, MathGame.class);
+                            MathGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 5:
                             intent = new Intent(MainMenu.this, MemoryGame.class);
+                            MemoryGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 6:
                             intent = new Intent(MainMenu.this, PatternGame.class);
+                            PatternGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 7:
                             intent = new Intent(MainMenu.this, SortingGame.class);
+                            SortingGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 8:
                             intent = new Intent(MainMenu.this, PatternMemoryGame.class);
+                            PatternMemoryGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 9:
                             intent = new Intent(MainMenu.this, ReactionGame.class);
+                            ReactionGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 10:
                             intent = new Intent(MainMenu.this, ReflexGame.class);
+                            ReflexGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 11:
                             intent = new Intent(MainMenu.this, CategoriesGame.class);
+                            CategoriesGame.setActivityFlag();
                             startActivity(intent);
                             break;
                         case 12:
                             intent = new Intent(MainMenu.this, OperatorsGame.class);
+                            OperatorsGame.setActivityFlag();
                             startActivity(intent);
                             break;
                     }

@@ -28,7 +28,9 @@ public class ReactionGame extends AppCompatActivity {
     private Random random;
     private int score;
 
-    private final int SCORE_TO_REACH = 10;
+    private final int SCORE_TO_REACH = 20;
+
+    private static int activityFlag;
 
 
     @Override
@@ -155,5 +157,19 @@ public class ReactionGame extends AppCompatActivity {
         }
     }
 
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
+        }
+    }
 
 }

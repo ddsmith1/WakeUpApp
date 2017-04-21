@@ -71,6 +71,8 @@ public class DistractionGame extends Activity {
     private Boolean timesUp;
     private Handler handler = new Handler();
 
+    private static int activityFlag;
+
 
     private void checkSelection(Button button) {
         String text= button.getText().toString();
@@ -439,6 +441,21 @@ public class DistractionGame extends Activity {
 
         private void showModifiedCards() {
 
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 

@@ -38,6 +38,8 @@ public class PatternGame extends Activity {
     int currentSolution;
     int patternsLeft = 0;
 
+    private static int activityFlag;
+
     private void setNewPattern() {
         String pattern;
         int start;
@@ -175,6 +177,21 @@ public class PatternGame extends Activity {
 
         patternsLeft = 5;
         setNewPattern();
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
+        }
     }
 
 }

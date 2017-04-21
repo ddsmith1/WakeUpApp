@@ -73,6 +73,8 @@ public class MemoryGame extends Activity {
 
     int roundsLeft = 3;
 
+    private static int activityFlag;
+
     private void checkSelection(ImageButton button){
         if (removedCardImage == button.getBackground()) {
             cardQueue.get(removalIndex).button.setBackground(removedCardImage);
@@ -395,6 +397,21 @@ public class MemoryGame extends Activity {
             findViewById(R.id.tv2).setVisibility(View.VISIBLE);
             ((TextView) findViewById(R.id.tv2)).setText("The missing item is... ");
 
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 

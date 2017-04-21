@@ -27,6 +27,7 @@ public class CategoriesGame extends AppCompatActivity {
     private int shapesLeft;
 
     private Drawable images[];
+    private static int activityFlag;
 
 
     @Override
@@ -83,7 +84,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[0] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            if(checkShape(0)) {
+            if(checkShape(0) && !isGreyImage(0)) {
                 buttons[0].setVisibility(View.INVISIBLE);
                 if(shapesLeft == 0) {
                     endRound();
@@ -95,7 +96,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[1] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(1)) {
+                if(checkShape(1) && !isGreyImage(1)) {
                     buttons[1].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -107,7 +108,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[2] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(2)) {
+                if(checkShape(2) && !isGreyImage(2)) {
                     buttons[2].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -119,7 +120,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[3] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(3)) {
+                if(checkShape(3) && !isGreyImage(3)) {
                     buttons[3].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -131,7 +132,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[4] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(4)) {
+                if(checkShape(4) && !isGreyImage(4)) {
                     buttons[4].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -143,7 +144,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[5] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(5)) {
+                if(checkShape(5) && !isGreyImage(5)) {
                     buttons[5].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -155,7 +156,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[6] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(6)) {
+                if(checkShape(6) && !isGreyImage(6)) {
                     buttons[6].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -166,7 +167,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[7] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(7)) {
+                if(checkShape(7) && !isGreyImage(7)) {
                     buttons[7].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -177,7 +178,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[8] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(8)) {
+                if(checkShape(8) && !isGreyImage(8)) {
                     buttons[8].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -188,7 +189,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[9] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(9)) {
+                if(checkShape(9) && !isGreyImage(9)) {
                     buttons[9].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -199,7 +200,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[10] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(10)) {
+                if(checkShape(10) && !isGreyImage(10)) {
                     buttons[10].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -210,7 +211,7 @@ public class CategoriesGame extends AppCompatActivity {
         listeners[11] = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkShape(11)) {
+                if(checkShape(11) && !isGreyImage(11)) {
                     buttons[11].setVisibility(View.INVISIBLE);
                     if(shapesLeft == 0) {
                         endRound();
@@ -650,6 +651,33 @@ public class CategoriesGame extends AppCompatActivity {
             buttons[i].setVisibility(View.VISIBLE);
         }
         assignShapes();
+    }
+
+    public boolean isGreyImage(int shapeNum) {
+        Drawable current = buttons[shapeNum].getBackground();
+        Drawable greyTri = getDrawable(R.mipmap.grey_triangle);
+        Drawable greyRect = getDrawable(R.mipmap.grey_rectangle);
+        Drawable greyCircle = getDrawable(R.mipmap.grey_circle);
+        if(current == greyTri || current == greyRect || current == greyCircle) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
+        }
     }
 
     private class Shape {

@@ -25,6 +25,8 @@ public class ReflexGame extends AppCompatActivity {
     private Random random;
     private int pressesLeft;
 
+    private static int activityFlag;
+
     //runs without a timer by reposting this handler at the end of the runnable
     Handler timerHandler = new Handler();
     Runnable imageChanger = new Runnable() {
@@ -336,6 +338,21 @@ public class ReflexGame extends AppCompatActivity {
                     buttons[buttonNum].setBackground(triangles[i+1]);
                 }
             }
+        }
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
         }
     }
 

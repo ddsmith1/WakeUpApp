@@ -46,6 +46,8 @@ public class SortingGame extends Activity {
     int nrItemsSinceSwitch = 0;
     String currentSortType = "shape";
 
+    private static int activityFlag;
+
     private class SortingItem
     {
         public String shape;
@@ -245,6 +247,21 @@ public class SortingGame extends Activity {
             Log.e("loadItems()", e + "");
         }
 
+    }
+
+    public static void setActivityFlag() {
+        activityFlag = 1;
+    }
+
+    public static void clearActivityFlag() {
+        activityFlag = 0;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(activityFlag == 0) {
+            super.onBackPressed();
+        }
     }
 
 }
