@@ -17,11 +17,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PracticeMenu" />
+        <activity
+            android:name=".PracticeMenu"
+            android:exported="true" />
         <activity android:name=".Help" />
         <activity android:name=".AlarmSet" />
 
-        <receiver android:name=".AlarmReceiver" />
+        <receiver
+            android:name=".AlarmReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="wakeup.wakeupapp.Broadcast"></action>
+            </intent-filter>
+        </receiver>
 
         <activity android:name=".SampleGame" />
         <activity android:name=".ColorGame" />
@@ -35,7 +43,8 @@
         <activity android:name=".ReactionGame" />
         <activity android:name=".OperatorsGame" />
         <activity android:name=".CategoriesGame" />
-        <activity android:name=".ReflexGame"></activity>
+        <activity android:name=".ReflexGame" />
+        <activity android:name=".NotificationStartUp"/>
     </application>
 
 </manifest>

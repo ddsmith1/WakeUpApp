@@ -1,6 +1,7 @@
 package wakeup.wakeupapp;
 
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ public class MainMenu extends AppCompatActivity {
     private ImageButton help;
     final int NUM_CHOICES = 3;
     final int NUM_GAMES = 12;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
