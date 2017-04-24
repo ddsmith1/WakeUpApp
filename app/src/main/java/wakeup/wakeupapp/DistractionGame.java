@@ -80,13 +80,11 @@ public class DistractionGame extends Activity {
         if (nrChanges == Integer.parseInt(text)) {
            endTheGame();
 
-            //TODO: make this something less douchey
             Toast toast = Toast.makeText(context, "You got it!", Toast.LENGTH_LONG);
             toast.show();
         } else {
             nrAttempts++;
             if (nrAttempts >= 3) {
-                //TODO: make this something less douchey
                 Toast toast = Toast.makeText(context, "Not your morning, huh?", Toast.LENGTH_LONG);
                 toast.show();
                 endTheGame();
@@ -198,7 +196,7 @@ public class DistractionGame extends Activity {
             public void run() {
                 runAfterLoaded();
             }
-        }, 4000);
+        }, 10000);
 
     }
 
